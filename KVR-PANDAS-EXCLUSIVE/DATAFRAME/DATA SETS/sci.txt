@@ -1,2 +1,0 @@
-Guido Van Rossum is the Father of Python
-Ritch is the facther of C
