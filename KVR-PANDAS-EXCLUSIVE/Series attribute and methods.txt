@@ -1,0 +1,183 @@
+		====================================================
+			Series attribute and methods
+		====================================================
+=>In Pandas, the Series object provides several attributes and methods. 
+=>We can access them directly to get the information about the Series object.
+----------------------
+INDEX
+----------------------
+Name of the Pandas Series object
+Get all values of the Series as a list
+Get count of number of elements in Series
+Check if Series is empty or not
+Get first N elements of Pandas Series
+Get last N elements of Pandas Series
+Get the count of non NaN values
+--------------------------------------
+Name of the Series object
+---------------------------------------
+A Series object contains the labeled values and it is like a single column of Excel file. Similar to column in Excel, it can also has a name associated with it. Let’s create a Pandas series object with name,
+
+import pandas as pd
+# Create a Series object from a list
+users = pd.Series(  ['Mark', 'Rita', 'Vicki', 'Justin', 'John', 'Michal'],
+                    index = ['a', 'b', 'c', 'd', 'e', 'f'],
+                    name = "Students")
+# Display the Pandas Series
+print(users)
+Output:
+
+a      Mark
+b      Rita
+c     Vicki
+d    Justin
+e      John
+f    Michal
+Name: Students, dtype: object
+In the last line of the output, just before the data type, it printed the name of the Series too. We can access the name of the Series object using the name property of the Series. For example,
+
+# Display the name attribute of the Series Object
+print(users.name)
+Output: Students
+We can also change the name of the existing Series object using name property. For example,
+
+users.name = 'Users'
+# Display the Pandas Series
+print(users)
+Output:
+a      Mark
+b      Rita
+c     Vicki
+d    Justin
+e      John
+f    Michal
+Name: Users, dtype: object
+We changed the name of the Series object to ‘Users’ from ‘Students’.
+----------------------------------------------------------------------------------
+Get all values of the Series as a list
+----------------------------------------------------------------------------------
+=>A Series is a one dimensional labeled array. It means, each value has a label associated with it. But what if we want to get all the values only? 
+=>In Pandas, the Series provides a property values, it returns a NumPy array containing all the values of Series. 
+For example,
+--------------
+import pandas as pd
+# Create a Series object from a list
+users = pd.Series(  ['Mark', 'Rita', 'Vicki', 'Justin', 'John', 'Michal'],
+                    index = ['a', 'b', 'c', 'd', 'e', 'f'],
+                    name = "Students")
+# Display the Pandas Series
+print(users)
+# Display All values of the Series
+print(users.values)
+# Display type of the object returned by values attribute
+print(type(users.values))
+Output:
+
+a      Mark
+b      Rita
+c     Vicki
+d    Justin
+e      John
+f    Michal
+Name: Users, dtype: object
+['Mark' 'Rita' 'Vicki' 'Justin' 'John' 'Michal']
+<class 'numpy.ndarray'>
+We can pass it to the list() function to get all values of a Series object as a list. For example,
+
+print(list(users.values))
+Output:
+
+['Mark', 'Rita', 'Vicki', 'Justin', 'John', 'Michal']
+-------------------------------------------------
+=>Get count of number of elements in Series
+-------------------------------------------------
+In Pandas, the Series object provides a property size, which returns the count of number of elements on the Series. 
+For example,
+----------------
+# Get the count of elements in Series
+print(users.size)
+Output: 6
+It returned the size of the Pandas series.
+-------------------------------------------------------
+Check if Series is empty or not
+-------------------------------------------------------
+=>In Pandas, the Series object provides a property empty, which returns True if Series is empty, otherwise returns False. 
+Let’s see an example for this,
+
+import pandas as pd
+# Create a Series object from a list
+users = pd.Series(  ['Mark', 'Rita', 'Vicki', 'Justin', 'John', 'Michal'],
+                    index = ['a', 'b', 'c', 'd', 'e', 'f'],
+                    name = "Students")
+# check if series is empty or not
+print(users.empty)
+Output:False
+=>As series was not empty, therefore it returned False. 
+=>Let’s create an empty Series object and check if it is empty or not. 
+For example,
+
+import pandas as pd
+# Create Empty Series
+users = pd.Series(dtype=int)
+# check if series is empty or not
+print(users.empty)
+Output:True
+-----------------------------------------------------------------------------------------
+Get first N elements of Pandas Series
+-----------------------------------------------------------------------------------------
+In Pandas, the Series object provides a function head(N). It returns the first n values of the Series object. For example,
+
+import pandas as pd
+# Create a Series object from a list
+users = pd.Series(  ['Mark', 'Rita', 'Vicki', 'Justin', 'John', 'Michal'],
+                    index = ['a', 'b', 'c', 'd', 'e', 'f'],
+                    name = "Students")
+# Get first 3 elements of series
+subset = users.head(3)
+# Display the Subset of Series
+print(subset)
+Output:
+
+a     Mark
+b     Rita
+c    Vicki
+Name: Students, dtype: object
+It returned first three values of the Series object. If n is not provided then by default it returns the first 5 values from the Series object.
+----------------------------------------------------------------------------------------
+Get last N elements of Pandas Series
+----------------------------------------------------------------------------------------
+In Pandas, the Series object provides a function tail(N). It returns the last n values of the Series object. 
+For example,
+
+import pandas as pd
+# Create a Series object from a list
+users = pd.Series(  ['Mark', 'Rita', 'Vicki', 'Justin', 'John', 'Michal'],
+                    index = ['a', 'b', 'c', 'd', 'e', 'f'],
+                    name = "Students")
+# Get last 3 elements of series
+subset = users.tail(3)
+# Display the Subset of Series
+print(subset)
+Output:
+
+d    Justin
+e      John
+f    Michal
+Name: Students, dtype: object
+It returned last three values of the Series object. If n is not provided then by default it returns the last 5 values from the Series object.
+-----------------------------------------------------------------------------------------
+Get the count of non NaN values
+-----------------------------------------------------------------------------------------
+In Pandas, the Series object provides a function count(). It returns the count of non NaN values in the Series object.
+For example,
+
+import pandas as pd
+import numpy as np
+# Create a Series object from a list
+users = pd.Series(['Mark', np.NaN, 'Vicki', 'Justin', np.NaN, 'Michal'])
+# Get count of non NaN values in Pandas Series
+count = users.count()
+print(count)
+Output: 4
+Therefore in total 6 values in the Series object but non nan values are only 4.
+======================================x=====================================================

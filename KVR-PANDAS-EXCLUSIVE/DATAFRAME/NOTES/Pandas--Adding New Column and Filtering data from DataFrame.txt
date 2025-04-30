@@ -1,0 +1,20 @@
+===================================================================
+			Adding new Column Name to Data Frame
+===================================================================
+1)  dataframeobj['new col name']=default value
+2)  dataframeobj['new col name']=expression
+Examples:
+df["total"]=df["english"]+df["telugu"]+df["hindi"]+df["maths"]+df["science"]+df["social"]
+df["percent"]=round((df["total"]/600)*100,2)
+=======================================================================
+		Data Filtering and Conditional Change 
+===================================================================
+1) dataframeobj.loc[ simple condition]
+			
+			Ex:    df.loc[ df["maths"]>75 ]
+				df.loc[df["maths"]>90 ,["name","maths"]]
+
+2) dataframeobj.loc[ compound condition ]
+			Ex:   df.loc[ (df["maths"]>60) & (df["maths"]<85) ]
+			Ex:  df.loc[ (df["maths"]>95) & (df["maths"]<=99),["name","maths"] ]
+===================================================================

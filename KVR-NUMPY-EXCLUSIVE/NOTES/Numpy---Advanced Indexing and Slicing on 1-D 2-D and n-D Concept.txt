@@ -1,0 +1,42 @@
+			===========================================================
+				Advanced Indexing and Slicing on 1-D 2-D and n-D Concept
+			===========================================================
+--------------------------------------------------------------
+1-D Advanced Indexing and Slicing
+--------------------------------------------------------------
+Step-1: Identify the Indices of Random Elements 
+		Examples:  ind=[0,7,8]  OR ind=[0,-2,-1]
+						OR
+				  ind=numpy.array([0,7,8])  OR ind=numpy.array([0,-2,-1])
+
+Step-2: Pass the Indices List OR Indices NDArray Object to original ndarray object
+				
+				OrginalNDArrayObject[Indices]
+
+		Examples:  		OrginalNDArrayObject [ ind ]
+	----------------------------------------------OR------------------------------------------------------------------
+Step:			OrginalNDArrayObject[ [Indices of Random Elements] ]
+=========================================================================================================
+2-D Advanced Indexing and Slicing
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Step-1: Identify the Row Indices of Random Elements 
+		Syntax: rowindices=(Row1,Row2,...Row-n)
+
+Step-2: Identify the Column Indices of Random Elements 
+		Syntax:   rowindices=(Col1,Col2,...Col-n)
+
+Step-3:   Pass rowindices and columnindices to Original ND-Array Object.
+		Syntax:   ND-Array Object[ row indices, colindices ]
+		----------------------------------OR-------------------------------------------
+Step        Syntax:    ND-Array Object[ (row indices),(col indices) ]
+						(OR)
+Step        Syntax:    ND-Array Object[ [row indices],[col indices] ]	
+=========================================================================================================
+N-D Advanced Indexing and Slicing
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Syntax:  ndarrayobj[ (Matrix Indices of Random Elements),(Row Indices of Random Elements),(Column Indices of Random Elements)]
+
+=>Here Matrix Indices of Random Elements can be Either +Ve or -Ve
+=>Here Row Indices of Random Elements can be Either +Ve or -Ve
+=>Here Column Indices of Random Elements can be Either +Ve or -Ve
+------------------------------------------------------------------------------------------------------------------------------------------------------------------

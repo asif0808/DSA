@@ -1,0 +1,34 @@
+			===========================================================
+				Indexing and Slicing Operations on ndarray--Most Imp
+			===========================================================
+
+Indexing : The process of Obtaining One value at a time from given Iterable Object by pssing Index is called Indexing
+--------------
+=>Purpose
+=>1-D---------------------1dArraobj[Index]
+=>2-D---------------------2dArrayobj[RowIndex,ColIndex] OR  2dArrayobj[RowIndex][ColIndex]
+=>N-D--------------------ndArrayobj[MatricIndex,RowIndex,ColIndex] OR ndArrayobj[MatrixIndex][RowIndex][ColIndex]
+------------------------
+
+
+Slicing
+--------------
+=>Purpose
+=>1-D
+=>2-D
+=>N-D
+----------------------------
+Advanced Indexing
+----------------------------
+=>Purpose
+=>1-D
+=>2-D
+=>N-D
+------------------------------
+Advanced Slicing
+----------------------------
+=>Purpose
+=>1-D
+=>2-D
+=>N-D
+------------------------------

@@ -1,0 +1,14 @@
+		===============================================
+		Pandas Statistical Operations in Series
+		===============================================
+It can be applied to a Series 
+
+sum(): Return the sum of the values.
+count(): Return the count of non-empty values.
+max(): Return the maximum of the values.
+min(): Return the minimum of the values.
+mean(): Return the mean of the values.
+median(): Return the median of the values.
+std(): Return the standard deviation of the values.
+describe(): Return the summary statistics for each column.
+==============================================================================

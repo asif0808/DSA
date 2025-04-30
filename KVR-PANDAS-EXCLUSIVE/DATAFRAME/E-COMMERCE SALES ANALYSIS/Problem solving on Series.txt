@@ -1,0 +1,73 @@
+ 
+# Problem-1: 
+  From the raw data below create a Pandas Series 'Amit', 'Bob', 'Kate', 'A', 'b', np.nan, 'Car', 'dog', 'cat'
+# a) Print all elements in lower case
+ # b) Print all the elements in upper case
+# c) Print the length of all the elements
+ANS:
+    import pandas as pd
+	import numpy as np
+	
+
+# 6.1
+series_1 = pd.Series(['Amit', 'Bob', 'Kate', 'A', 'b',
+                      np.nan, 'Car', 'dog', 'cat'])
+print(series_1)
+
+# a) Print all elements in lower case
+series_lower_cases = [str(ele).lower() for ele in series_1]
+print(series_lower_cases)
+
+# b) Print all the elements in upper case
+series_upper_cases = [str(ele).upper() for ele in series_1]
+print(series_upper_cases)
+
+# c) Print the length of all the elements
+print(len(series_1))
+
+===================================================================================
+
+# 6.2: From the raw data below create a Pandas Series ' Atul', 'John ', ' jack ', 'Sam'
+# a) Print all elements after stripping spaces from the left and right
+# b) Print all the elements after removing spaces from the left only
+# c) Print all the elements after removing spaces from the right only
+
+# 6.2
+series_2 = pd.Series([' Atul', 'John ', ' jack ', 'Sam'])
+print(series_2)
+
+# a) Print all elements after stripping spaces from the left and right
+series_stripped = [str(ele).strip() for ele in series_2]
+print(series_stripped)
+
+# b) Print all the elements after removing spaces from the left only
+series_lstripped = [str(ele).lstrip() for ele in series_2]
+print(series_lstripped)
+
+# c) Print all the elements after removing spaces from the right only
+series_rstripped = [str(ele).rstrip() for ele in series_2]
+print(series_rstripped)
+=============================================================================
+# 6.3: - Create a series from the raw data below 'India_is_big', 'Population_is_huge', np.nan, 'Has_diverse_culture'
+# a) split the individual strings wherever ‘_’ comes and create a list out of it.
+# b) Access the individual element of a list
+# c) Expand the elements so that all individual elements get splitted by ‘_’ and insted of list returns individual elements
+# 6.3
+series_3 = pd.Series(
+    ['India_is_big', 'Population_is_huge', np.nan, 'Has_diverse_culture'])
+print(series_3)
+
+# a) split the individual strings wherever ‘_’ comes and create a list out of it.
+list_splited = [str(ele).split("_") for ele in series_3]
+print(list_splited)
+
+flatten_list = []
+# b) Access the individual element of a list
+for sublist in list_splited:
+    for l in sublist:
+        flatten_list.append(l)
+        print(l)
+
+# c) Expand the elements so that all individual elements get splitted by ‘_’ and insted of list returns individual elements
+print(flatten_list)
+===============================================================

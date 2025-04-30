@@ -1,0 +1,31 @@
+===============================================================================================
+						  full()
+===============================================================================================
+=>This is function is used for building a matrix by specifying fill value either 1-D or 2-D or n-D
+=>Syntax:-
+			varname=numpy.full(shape,fill_value,dtype)
+=>varname is an obejct of <class, numpy.ndarray>
+=>Here Shape can be 1-D(number of  Fill_Value)  or 2-D(Rows,Cols)  or n-D( Number of Matrices,Number of Rows, Number of Columns) 
+=>fill_value can be any number of programmer choice 
+==============================================================================================
+					 linspace()
+===============================================================================================
+Syntax:     varname = numpy.linspace(start, stop, num, endpoint, retstep, dtype)   
+=>start: It represents the starting value of the interval.
+=>stop:It represents the stopping value of the interval.
+=>num: The amount of evenly spaced samples over the interval to be generated. The default is 50.
+=>endpoint: Its true value indicates that the stopping value is included in the interval.
+=>rettstep: This has to be a boolean value. Represents the steps and samples between the consecutive numbers.
+=>dtype: It represents the data type of the array items.
+===============================================================================================
+				hstack()
+===============================================================================================
+		varname=numpy.hstack((ndarrayobj1,ndarrayobj2))
+
+=>The function nnumpy.hstack(tup) takes arguments as tuple which include matrix's/arrays. The hstack function combines the two or more matrix/arrays horizontally which have the same number of rows. The hstack returns an ndarray.
+===============================================================================================
+				vstack()
+===============================================================================================
+		varname=numpy.vstack((ndarrayobj1,ndarrayobj2))
+=>The function nnumpy.vstack(tup) takes arguments as tuple which include matrix's/arrays. The vstack function combines the two or more matrix/arrays Verticaly which have the same number of Columns. The vstack returns an ndarray.
+===========================================================================================

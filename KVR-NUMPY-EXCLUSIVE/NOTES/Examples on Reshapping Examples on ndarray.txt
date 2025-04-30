@@ -1,0 +1,202 @@
+=====================================================================
+			Examples on Reshapping Examples on ndarray
+=====================================================================
+
+import numpy as np
+
+[2]
+lst=[10,20,30,40,50,60,70,80,90]
+print(lst,type(lst))
+[10, 20, 30, 40, 50, 60, 70, 80, 90] <class 'list'>
+---------------------------------------------------------------------------------------
+[3]
+#Convert list object into ndarray object.
+a=np.array(lst)
+print(a,type(a))
+[10 20 30 40 50 60 70 80 90] <class 'numpy.ndarray'>
+---------------------------------------------------------------------------------------
+[4]
+a
+array([10, 20, 30, 40, 50, 60, 70, 80, 90])
+---------------------------------------------------------------------------------------
+[5]
+#Find the dimension of an array--we use 'ndim' attribute of ndarray object
+print("Dimension of a=",a.ndim)
+
+Dimension of a= 1
+---------------------------------------------------------------------------------------
+[6]
+#Find the Shape of ndarray by using shape attribute
+print("Shape of ndarray=",a.shape)
+Shape of ndarray= (9,)
+---------------------------------------------------------------------------------------
+[7]
+#Find Size of ndarray  by using size attribute
+print("Number of Elements in ndarray=",a.size)
+Number of Elements in ndarray= 9
+---------------------------------------------------------------------------------------
+[8]
+#Find Size of ndarray  by using len()
+print("Number of Elements in ndarray=",len(a))
+Number of Elements in ndarray= 9
+---------------------------------------------------------------------------------------
+[9]
+#Find data type of ndarray (Type of Data) obtained by using dtype attribute
+print("Data type of ndarray internally=",a.dtype)
+Data type of ndarray internally= int32
+---------------------------------------------------------------------------------------
+[10]
+#Here attrubutes of ndarray are ndim,shape,size,dtype
+---------------------------------------------------------------------------------------
+[11]
+lst=[10,20,30,40,50,60,70,80,90]
+print(lst,type(lst))
+[10, 20, 30, 40, 50, 60, 70, 80, 90] <class 'list'>
+---------------------------------------------------------------------------------------
+[12]
+#Here we are reshaping the ndarray object
+a=np.array(lst)
+print(a,type(a))
+[10 20 30 40 50 60 70 80 90] <class 'numpy.ndarray'>
+---------------------------------------------------------------------------------------
+[13]
+#To reshape the ndarray object as matrix, we have Two Approaches
+# 1. By using  shape Attribute
+# 2. By using reshape() Function
+---------------------------------------------------------------------------------------
+[14]
+# 1. By using  shape Attribute
+# Syntax:  ndarrayobject.shape=(Rows,Cols)
+[15]
+lst=[10,20,30,40,50,60,70,80,90]
+a=np.array(lst)
+print(a,type(a))
+[10 20 30 40 50 60 70 80 90] <class 'numpy.ndarray'>
+---------------------------------------------------------------------------------------
+[16]
+a.shape=(3,3)
+print(a,type(a))
+[[10 20 30]
+ [40 50 60]
+ [70 80 90]] <class 'numpy.ndarray'>
+---------------------------------------------------------------------------------------
+[17]
+print("Dimension of ndarray a=",a.ndim)
+print("Shape of ndarray a=",a.shape)
+print("Size of ndarray a=",a.size)
+print("Data Type of ndarray=",a.dtype)
+Dimension of ndarray a= 2
+Shape of ndarray a= (3, 3)
+Size of ndarray a= 9
+Data Type of ndarray= int32
+---------------------------------------------------------------------------------------
+[18]
+lst=[10,20,30,40,50,60,70,80,90,25,35,15]
+print(lst,type(lst))
+[10, 20, 30, 40, 50, 60, 70, 80, 90, 25, 35, 15] <class 'list'>
+---------------------------------------------------------------------------------------
+[19]
+a=np.array(lst)
+print(a,type(a))
+[10 20 30 40 50 60 70 80 90 25 35 15] <class 'numpy.ndarray'>
+---------------------------------------------------------------------------------------
+[21]
+#a.shape=(4,5)----ValueError: cannot reshape array of size 12 into shape (4,5)
+---------------------------------------------------------------------------------------
+[23]
+a.shape=(3,4)
+print("Content of ndarray a=")
+print(a)
+print("Dimension of ndarray a=",a.ndim)
+print("Shape of ndarray a=",a.shape)
+print("Size of ndarray a=",a.size)
+print("Data Type of ndarray=",a.dtype)
+Content of ndarray a=
+[[10 20 30 40]
+ [50 60 70 80]
+ [90 25 35 15]]
+Dimension of ndarray a= 2
+Shape of ndarray a= (3, 4)
+Size of ndarray a= 12
+Data Type of ndarray= int32
+---------------------------------------------------------------------------------------
+[24]
+a.shape=(4,3)
+print("Content of ndarray a=")
+print(a)
+print("Dimension of ndarray a=",a.ndim)
+print("Shape of ndarray a=",a.shape)
+print("Size of ndarray a=",a.size)
+print("Data Type of ndarray=",a.dtype)
+Content of ndarray a=
+[[10 20 30]
+ [40 50 60]
+ [70 80 90]
+ [25 35 15]]
+Dimension of ndarray a= 2
+Shape of ndarray a= (4, 3)
+Size of ndarray a= 12
+Data Type of ndarray= int32
+---------------------------------------------------------------------------------------
+[25]
+a.shape=(6,2)
+print("Content of ndarray a=")
+print(a)
+print("Dimension of ndarray a=",a.ndim)
+print("Shape of ndarray a=",a.shape)
+print("Size of ndarray a=",a.size)
+print("Data Type of ndarray=",a.dtype)
+Content of ndarray a=
+[[10 20]
+ [30 40]
+ [50 60]
+ [70 80]
+ [90 25]
+ [35 15]]
+Dimension of ndarray a= 2
+Shape of ndarray a= (6, 2)
+Size of ndarray a= 12
+Data Type of ndarray= int32
+---------------------------------------------------------------------------------------
+[26]
+a.shape=(2,6)
+print("Content of ndarray a=")
+print(a)
+print("Dimension of ndarray a=",a.ndim)
+print("Shape of ndarray a=",a.shape)
+print("Size of ndarray a=",a.size)
+print("Data Type of ndarray=",a.dtype)
+Content of ndarray a=
+[[10 20 30 40 50 60]
+ [70 80 90 25 35 15]]
+Dimension of ndarray a= 2
+Shape of ndarray a= (2, 6)
+Size of ndarray a= 12
+Data Type of ndarray= int32
+---------------------------------------------------------------------------------------
+[27]
+a.shape=(12,1)
+print("Content of ndarray a=")
+print(a)
+print("Dimension of ndarray a=",a.ndim)
+print("Shape of ndarray a=",a.shape)
+print("Size of ndarray a=",a.size)
+print("Data Type of ndarray=",a.dtype)
+Content of ndarray a=
+[[10]
+ [20]
+ [30]
+ [40]
+ [50]
+ [60]
+ [70]
+ [80]
+ [90]
+ [25]
+ [35]
+ [15]]
+Dimension of ndarray a= 2
+Shape of ndarray a= (12, 1)
+Size of ndarray a= 12
+Data Type of ndarray= int32
+---------------------------------------------------------------------------------------

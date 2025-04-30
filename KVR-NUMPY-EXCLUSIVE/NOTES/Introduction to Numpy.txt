@@ -1,0 +1,31 @@
+		==========================================
+						Numpy
+		==========================================
+Introduction to Numpy:
+-----------------------------------------------------------------------------------------
+=>Numpy stands for Numerical Python.
+=>Numpy is one of the pre-defined third party module / Library and numpy module is not a pre-defined module in Python Language.
+=>Syntax for installing any module:
+
+			pip    install    module-name ( at any Windows Command  )
+		    
+=>Example: Install  numpy module
+
+			pip   install   numpy   ( at any Windows Command  )
+		
+=>To use numpy as part of our program, we must import numpy module.
+=>A Numpy module is a collection of Variables, Functions and Classes.
+===============================================================
+History of Numpy:
+------------------------------
+=>Numpy was developed by studying existing module called "Numeric Library"(origin for development of numpy module)
+=>The Numeric Library was developed by JIM HUNGUNIAN
+=>The Numeric Library was not able to solve  complex maths calculations.
+=>Numpy module developed by TRAVIS OLIPHANT for solving   complex maths calculations and array oraganization.
+=>Numpy Module developed in the year 2005
+=>Numpy Module developed in C and PYTHON languages.
+==============================================================
+
+
+
+

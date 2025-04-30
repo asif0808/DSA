@@ -1,0 +1,59 @@
+			-------------------------------------------------	
+				NumPy Sorting Arrays
+			--------------------------------------------------
+=>Sorting is nothing arranging the elements in an ordered sequence.
+=>Ordered sequence is any sequence that has an order corresponding to elements, like numeric or alphabetical, ascending or descending.
+=>The NumPy ndarray object has a function called sort(), that will sort a specified array.
+
+Examples:
+----------------------------------------------------
+import numpy as np
+arr = np.array([3, 2, 0, 1])
+print(np.sort(arr))  #   [0 1 2 3]
+----------------------------------------------------
+import numpy as np
+arr = np.array(['banana', 'cherry', 'apple'])
+print(np.sort(arr)) # ['apple' 'banana' 'cherry']
+-----------------------------------------------------
+import numpy as np
+arr = np.array([True, False, True])
+print(np.sort(arr)) # [False True True]
+-------------------------------------------------------
+Sorting a 2-D Array
+--------------------------------------------------------
+If you use the sort() method on a 2-D array, both columns and Rows of nd array will be sorted.
+-------------------
+Examples:
+-------------------
+		import numpy as np
+		arr = np.array([[3, 2, 4], [5, 0, 1]])
+		print(np.sort(arr))
+#output
+			[[2 3 4]
+			 [0 1 5]]
+--------------------------------------------------------------------------------------------------
+a=np.array([110, 20, -30, 40, 50, 160, 7, 8, 90])
+print(a)
+
+np.sort(a)-----------array([-30,   7,   8,  20,  40,  50,  90, 110, 160])
+np.sort(a)[::-1]-----array([160, 110,  90,  50,  40,  20,   8,   7, -30])
+a.shape=(3,3)
+a-------------------------------array([[110,  20, -30],
+				       [ 40,  50, 160],
+				       [  7,   8,  90]])
+
+np.sort(a,axis=0)  # ColumnWise
+				array([[  7,   8, -30],
+				       [ 40,  20,  90],
+				       [110,  50, 160]])
+-----------------------------------------------------------
+print(a)
+			array([[110,  20, -30],
+			       [ 40,  50, 160],
+			       [  7,   8,  90]])
+
+np.sort(a,axis=1)  # Row Wise
+			array([[-30,  20, 110],
+			       [ 40,  50, 160],
+			       [  7,   8,  90]])
+--------------------------------------------------------------------------------------------------

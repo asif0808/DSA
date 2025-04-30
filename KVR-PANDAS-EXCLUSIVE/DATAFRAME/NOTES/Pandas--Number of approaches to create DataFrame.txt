@@ -1,0 +1,161 @@
+		================================================
+			Number of approaches to create DataFrame
+		================================================
+=>To create an object of DataFrame, we use pre-defined Function called DataFrame() which is present in pandas Module and returns an object of DataFrame class.
+=>We have 5 Ways to create an object of DataFrame. They are
+		a) By using list / tuple
+		b) By using dict
+		c) By using set type
+		d) By using Series
+		e) By using ndarray of numpy
+		f) By using CSV File (Comma Separated Values)
+------------------------------------------------------------------------
+=>Syntax for creating an object of DataFrame in pandas:
+---------------------------------------------------------------------------
+	varname=pandas.DataFrame(object,index,columns,dtype)
+----------------
+Explanation:
+----------------
+=>'varname' is an object of <class,'pandas.core.dataframe.DataFrame'>
+=>'pandas.DataFrame()' is a pre-defined function present in pandas module and it is  used to create an object of DataFrame for storing Data sets.
+=>'object' represents list (or) tuple (or) dict (or) Series (or) ndarray (or) CSV file
+=>'index' represents Row index and whose default indexing starts from 0,1,...n-1 
+     where 'n' represents number of values in DataFrame object.
+=>'columns' represents Column index whose default indexing starts from 0,1..n-1 
+    where n number of columns.
+=>'dtype' represents data type of values of Column Value.
+=======================================================
+Creating an object DataFrame by Using list / tuple
+-----------------------------------------------------------------------------------
+>>>import pandas as pd
+>>>lst=[10,20,30,40]
+>>>df=pd.DataFrame(lst)
+>>>print(df)
+		     0
+		0  10
+		1  20
+		2  30
+		3  40
+------------------------------------		
+lst=[[10,20,30,40],["RS","JS","MCK","TRV"]]
+df=pd.DataFrame(lst)
+print(df)
+	      0   1    2    3
+	0  10  20   30   40
+	1  RS  JS  MCK  TRV
+--------------------------------------------
+lst=[[10,'RS'],[20,'JG'],[30,'MCK'],[40,'TRA']]
+df=pd.DataFrame(lst)
+print(df)
+	     0     1
+	0  10   RS
+	1  20   JG
+	2  30  MCK
+	3  40  TRA
+--------------------------------------------------
+lst=[[10,'RS'],[20,'JG'],[30,'MCK'],[40,'TRA']]
+df=pd.DataFrame(lst, index=[1,2,3,4],columns=['Rno','Name'])
+print(df)
+
+	    Rno Name
+	1   10   RS
+	2   20   JG
+	3   30  MCK
+	4   40  TRA
+-------------------------------------------
+tpl=( ("Rossum",75), ("Gosling",85), ("Travis",65), ("Ritche",95),("MCKinney",60) )
+df=pd.DataFrame(tpl, index=[1,2,3,4,5],columns=['Name','Age'])
+print(df)
+		Name    Age
+	1    Rossum   75
+	2   Gosling     85
+	3    Travis      65
+	4    Ritche      95
+	5  MCKinney  60
+-------------------------------------------------------------------------------------
+Creating an object DataFrame by Using dict object
+--------------------------------------------------------------------
+=>When we create an object of DataFrame by using Dict , all the keys are taken as Column Names and Values of Value are taken as Data.
+-----------------
+Examples:
+-----------------
+>>> import pandas as pd
+>>> dictdata={"Names":["Rossum","Gosling","Ritche","McKinney"],"Subjects":["Python","Java","C","Pandas"],"Ages":[65,80,85,55]  }
+>>> df=pd.DataFrame(dictdata)
+>>> print(df)
+		      Names   Subjects    Ages
+		0    Rossum   Python	65
+		1   Gosling     Java		80
+		2    Ritche        C		85
+		3  McKinney   Pandas	55
+>>> df=pd.DataFrame(dictdata,index=[1,2,3,4])
+>>> print(df)
+		      Names    Subjects      Ages
+		1    Rossum   Python          65
+		2   Gosling     Java             80
+		3    Ritche        C                85
+		4  McKinney   Pandas        55
+----------------------------------------------------------------------
+Creating an object DataFrame by Using Series object
+----------------------------------------------------------------------
+>>> import pandas as pd
+>>> sdata=pd.Series([10,20,30,40])
+>>> df=pd.DataFrame(sdata)
+>>> print(df)
+	     0
+	0  10
+	1  20
+	2  30
+	3  40
+>>> sdata=pd.Series({"IntMarks":[10,20,30,40],"ExtMarks":[80,75,65,50]})
+>>> print(sdata)
+IntMarks    [10, 20, 30, 40]
+ExtMarks    [80, 75, 65, 50]
+dtype: object
+
+>>> df=pd.DataFrame(sdata)
+>>> print(df)
+				 0
+	IntMarks  [10, 20, 30, 40]
+	ExtMarks  [80, 75, 65, 50]
+>>> ddata={"IntMarks":[10,20,30,40],"ExtMarks":[80,75,65,50]}
+>>> df=pd.DataFrame(ddata)
+>>> print(df)
+   IntMarks  ExtMarks
+0        10        80
+1        20        75
+2        30        65
+3        40        50
+-----------------------------------------------------------------------------------------------
+Creating an object DataFrame by Using ndarray object
+----------------------------------------------------------------------------------------------
+>>> import numpy as np
+>>> l1=[[10,60],[20,70],[40,50]]
+>>> a=np.array(l1)
+>>> df=pd.DataFrame(a)
+>>> print(df)
+		      0   1
+		0  10  60
+		1  20  70
+		2  40  50
+>>> df=pd.DataFrame(a,columns=["IntMarks","ExtMarks"])
+>>> print(df)
+		   IntMarks  ExtMarks
+		0        10        60
+		1        20        70
+		2        40        50
+------------------------------------------------------------------------------------------
+e) By using CSV File(Comma Separated Values)
+-----------------------------------------------------------------
+import pandas as pd1
+df=pd1.read_csv("D:\KVR-JAVA\stud.csv")
+print("type of df=",type(df)) #type of df= <class 'pandas.core.frame.DataFrame'>
+print(df)
+--------------------- OUTPUT--------------------
+	    stno     name		marks
+	0    10    Rossum	        45.67
+	1    20    Gosling	        55.55
+	2    30    Ritche		66.66
+	3    40    Travis		77.77
+	4    50      KVR		        11.11
+==============================================================================

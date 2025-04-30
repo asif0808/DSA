@@ -1,0 +1,224 @@
+
+Questions:
+--------------------------------------------------------------------------------------------------------------------------------------------
+1. Find Total Number Apps in Google Play Store
+2. Find the Total Number of Columns in Each app of Google Play Store
+--------------------------------------------------------
+1. Display Top 5 Rows of The Dataset
+2. Check the Last 3 Rows of The Dataset
+3. Find Shape of Our Dataset (Number of Rows & Number of Columns)
+4. Get Information About Our Dataset Like Total Number Rows, Total Number of Columns, Datatypes of Each Column 
+   And  Memory Requirement
+5. Get Overall Statistics About The Dataframe
+6. Total Number of App Titles Contain Astrology
+7. Find Average App Rating
+8.  Find Total Number of Unique Category
+9. Which Category Getting The Highest Average Rating?
+10. Find Total Number of App having 5 Star Rating
+11. Find Average Value of Reviews
+12. Find Total Number of Free and Paid Apps
+13.  Which App Has Maximum Reviews?
+14. Display Top 5 Apps Having Highest Reviews
+15. Find Average Rating of Free and Paid Apps
+16. Display Top  5 Apps Having Maximum Installs
+==============================================================================================
+		Google Play Store Data Analysis
+============================================================================
+1. Display top 5 Rows and 3 Rows
+        df.head()  # 5 Rows
+	df.head(3) # 3 Rows
+2. Display bottom 5 rows and 3 Rows
+	df.tail()  # 5 Rows
+	df.tail(3)  # 3 Rows
+3. Find the Number of Apps in Google play store and columns( shape)
+	df.shape
+	print("Number of Apps=",df.shape[0])
+	print("Number of Cols=",df.shape[1])
+4. Find the information abount Number of Rows , Columns,data types of all columns, memory space 
+  occuped by Google Play apps
+       df.info()
+5. Get the Statistical Information about Google Play Store Apps(Called Descriptive statistics)
+				OR
+	Get the Descriptive statistics about Google Play Store App
+
+	df.describe() # Gives Descriptive statistical Information only on Numerical Columns
+	df.describe(include='all') # Gives Descriptive statistical Information of all Columns
+
+6.Find the Name of Apps contains Astrology
+       step-0:  df.columns # Gives all column names
+       step-1: First find app names
+              df["App"] # displays all apps names values from apps column
+       step-2: Find the app names contains Astrology word
+              df["App"].str.contains("Astrology") # Gives Boolean array
+        step-3: pass boolean array to DataFrame object
+		df[df["App"].str.contains("Astrology")] # Case sensitive
+			OR
+		df[df["App"].str.contains("Astrology",case=False)]	# Ingore the Case sensitive
+	Step-4: Find the Number of column Names starts with "Astrology"
+	       len(df[df["Apps"].str.contains("Astrology",case=False)])
+
+7.Find the Average App Rating of Google Play Store
+		Step-0: Find the column Name on which we are working
+		         df.columns  # Gives all column names---take 'rating'
+		Step-1: Get all the app rating 
+		        df["Ratings"] # Gives all Numerical Values of 'Rating'
+		Step-3:  Find the mean() of Rating--Called Average App Rating
+			df["Ratings"].mean()
+8.Find the total number of Unique Category
+		Step-0: Find the column Name on which we are working
+		         df.columns  # Gives all column names---take 'Category'
+		Step-1: Get all the Values of Unique Category
+		        df["Category"] # Gives all  Values of 'Category'
+		Step-2: Get the Unique Values of Category
+			df["Category"].nunique() #Gives Number of Unique Values of Category--34
+9. Find which Category getting Highest Average Rating
+		Step-0: Find the column Name on which we are working
+		         df.columns  # Gives all column names---take 'Category'
+		Step-1: Separate OR group the category
+		        df.groupby("Category")
+		Step-2: Get the Rating of Every Category
+		           df.groupby("Category")["Rating"]
+		Step-3: Find the Mean of Rating of Every Category
+			df.groupby("Category")["Rating"].mean()
+		Step-4: Find the Highest Average Rating
+			df.groupby("Category")["Rating"].mean().sort_values(ascending=False)
+			         #Here we get First Entry is the Highest Average Rating
+				OR
+			df.groupby("Category")["Rating"].mean().sort_values()
+				#Here we get Last Entry is the Highest Average Rating
+10.Find the total number App having 5 star Rating Apps
+		Step-0: Find the column Name on which we are working
+		        df.columns  # Gives all column names---take 'Rating'
+		Step-1:Find the Rating Values
+		        df["Rating"] 
+		Step-2: Find the Rating Values which is equal to 5
+			df["Rating"]==5 # Gives Boolean Values 
+		Step-3: Get the App names by Passing the Boolean Values to DataFrame
+			df[df["Rating"]==5] # Gives 5 star Rating App Names
+		Step-4: Get Total Number of App names having 5 star rating
+			len(df[df["Rating"]==5]) # Gives Number of 5 star Rating Apps
+11.Find the Average Values of Reviews
+		Step-0: Find the column Names on which we are working
+		        df.columns  # Gives all column names---take 'Review'
+		Step-1: Find the Review Values
+			df["Reviews"] # gets Numerical values related to reviews
+		Step-2: Find the data type of Review column
+			df["Review"].dtype # gives dtype(o)
+		Step-3: Convert Dtype of df["Review"] as int or float by using astype()
+			df["Review"].astype("float") # gives ValueError bcoz one col contains 3.0M
+		Step-4: Find which App review Value is 3.0M
+			df["Review"]=="3.0M" # Gives Boolean Array
+			        Pass to DataFrame
+			df[df["Review"]=="3.0M"] # Gives app details--Index-10472 contails 3.0M
+		Step-5: Replace 3.0M Value with 3.0x1000000 with replace() of DataFrame
+			df["Review"].replace("3.0M",3.0x1000000) # gets replaced and Modify the df["Review"]
+			df["Review"]=df["Review"].replace("3.0M",3.0)
+		Step-6: Now Again Convert dtype(o) of df["Review"] to float type by using astype()
+		         df["Review"].astype("float") #Dtype changed and Modify its dtype permanenly
+			 
+			  df["Review"]=df["Review"].astype("float")
+		Step-7: Now Lets Check dtype of df["Review"]
+			  df["Review"].dtype # Now It is dtype(float64)
+		Step-8: Now to get Average review, we apply mean()
+			  df["Review"].mean()
+12.Find the total number of Free and Paid Apps of Google Play store
+		Step-0: Find the column Names on which we are working
+		        df.columns  # Gives all column names---take 'Type'
+		Step-2: Find the Existing Values of 'Type' column
+				df.head(1) OR df.head()
+				df.tails(1) OR df.tail()
+					OR
+				df["Type"] # gives all values of "type" column
+		Step-3: Now the total number of Free and Paid Apps of Google Play store
+			df["Type"].value_counts() # Gives the result
+13. Find which app has Maximum Review
+		Step-1: Find the column Names on which we are working
+		        df.columns  # Gives all column names---take 'Review'
+		Step-2: Get the Review Values
+			df["Review"] # Gets all Review Values
+		Step-3: Get the Max Review Values
+			df["Review"].max() # gets max value of Review
+		Step-4: Gets the complete app details in boolean form
+			df["Review"].max()==df["Review"]
+		Step-5: Get the complete app details
+			df[df["Review"].max()==df["Review"]]
+		Step-6: Get App Name which is having Maximum Review
+			df[df["Review"].max()==df["Review"]]["App"] # gets app name--Facebook
+		
+14. Find the Top 5 App Names having highest Review
+		Step-1: Find the column Names on which we are working
+		        df.columns  # Gives all column names---take 'Review'
+		Step-2: Find the Review Values 
+			df["Reviews"]
+		Step-3: Sort Review Values
+			df["Reviews"].sort_values(ascending=False)
+		Ste-4: Now get 5 top App values after sorting
+			   df["Review"].sort_values(ascending=False).head()
+				OR
+		       i) Now get 5 top App values after sorting with indices
+		           df["Review"].sort_values(ascending=False).head().index
+		       ii) Store indices of 5 top app values 
+		           indices=df["Review"].sort_values(ascending=False).head().index
+		       iii) pass indices (column) to iloc[]
+		             df.iloc[indices]["App"] # we get Top 5 App Names having highest Review
+15.Find Average Rating of Free and Paid Apps
+	Step-1: Find the column Names on which we are working
+		        df.columns  # Gives all column names---take 'Type'
+			
+	Step-2: Find the Existing Values of 'Type' column
+				df.head(1) OR df.head()
+				df.tails(1) OR df.tail()
+					OR
+				df["Type"] # gives all values of "type" column
+	Step-3: Separate OR group the DataFrame Values by "Type" Column
+		        df.groupby("Type")
+	Step-4: Find the  Rating values of Each Category / Group
+		df.groupby("Type")["Rating"]#Here we get  Rating values of each category of "type"
+	Step-5: Find the mean on the above
+		df.groupby("Type")["Rating"].mean()
+16. Find Top 5 Apps Having Maximum Installs
+	Step-1: Find the column Names on which we are working
+	        df.columns  # Gives all column names---take 'Installs'	
+			OR 
+		df.head(1) # Gives all column names---take 'Installs' vals
+	Step-2: Find the data type of Installs column
+		df["Installs"].dtype # gives dtype(o)
+	Step-3: Convert Dtype of df["Installs"] as int  by using astype()
+		df["Installs"].astype("int") # gives ValueError bcoz one col contains 10,000+
+	Step-4: Replace "," with empty string
+		df["Installs"].str.replace(",","") and Place them in new Column
+		df["Installs_1"]=df["Installs"].str.replace(",","")
+			Now Lets once again Check the Values
+		df.head() # Here "," has been removed from Installs_1 
+		          # Now Still Installs_1 contains 10000+
+		Now Again Replace + with empty
+		df["Installs_1"].str.replace("+","") and Place them in Same Column
+		df["Installs_1"]=df["Installs_1"].str.replace("+","")
+	Step-5: Finally check the dtype values of Installs which is vailable in the form of 
+		=>new column as Installs_1
+			df["Installs_1"].dtype # Now whose dtype is dtype(o)
+		=>Now dtype of df["Installs_1"] to int type
+			df["Installs_1"].astype("int") # given ValueError bcoz One App contains "Free" as value for Install_1 and "Free" must be Replaced with 0
+		=>To Check The name of the apps with "Free" Installs
+		     df["Installs_1"]=="Free" # generates Bool type Values
+		=>Pass the above bool type values to DataFrame to get the App Names Values
+		     df[df["Installs_1"]=="Free"]
+		=>Now Replace "Free" Instals_1 values with "0"
+			df["Installs_1"].str.replace("Free","0") and Place them in Same Column
+			df["Installs_1"]=df["Installs_1"].str.replace("Free","0")
+		=>Now Lets once again Check the Values and Every thing Perfect
+			df["Installs_1] # Gives all Installs with Perfect Values
+		
+	       i) Now get  top 5 Apps Having Maximum Installs
+		           df["Installs_1"].sort_values(ascending=False).head().index
+	       ii) Store indices of  top 5 Apps Having Maximum Installs 
+		           indices=df["Installs_1"].sort_values(ascending=False).head().index
+	       iii) pass indices (column) to iloc[] or loc[]
+	             df.iloc[indices]["App"] # we get Top 5 App Names having Maximum Installs
+
+=================================================================================================	
+
+	
+		
+		
+				

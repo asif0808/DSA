@@ -1,0 +1,84 @@
+			=========================================================
+				Numpy--random module in numpy
+			=========================================================
+=>The random module is sub module of numpy module
+=>The purpose of random module is that "To generate random values for Various Application Development like OTPS, 
+    captcha Code..etc"
+=>Programatically , To use random module of numpy module we use the following
+		Syntax1:   import numpy as np
+					np.random.functionname(...)
+		Syntax-2:  from numpy import random
+					random.functionname(...)
+		Syntax-3:  from numpy import random as r
+					r.functionname(...)
+=>random module	of numpy contains the following functions. 
+				1. randint()
+				2. rand()
+				3. uniform()
+				4. randn()
+				5. normal()
+				8. shuffle()
+				9. choice()
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+1. randint()
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+=>This function is used for Generating random Integer Values
+Syntax-1:   numpy.random.randint(Value)-------------> Random number between 0 to value-1
+Syntax-2:   numpy.random.randint(Low,High)-------------> Random number between Low to High-1
+Syntax-2:   numpy.random.randint(Low,High,size)------- Random number between Low to High-1 with size(1-D,2-D, n-D)
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+2. rand
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+=>This function is used for Generating random floating point values between 0.0 to 1.0.
+Syntax-1: numpy.random.rand()--->Generating Any random floating point value between 0.0 to 1.0.
+Syntax-2: numpy.random.rand(value)--->Generating Number of Random floating Values (Value times) 
+									between 0.0 to 1.0	with 1-D																		
+Syntax-3: numpy.random.rand(Rows, Cols)--->Generating Number of Random floating Values (Row, Cols) 
+									between 0.0 to 1.0	with 2-D	
+Syntax-3: numpy.random.rand(No.Matrices, Row, Cols)--->Generating Number of Random floating Values (No.Matrices,														Row, Cols) between 0.0 to 1.0	with 3-D	
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+3. uniform()
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+=>This function is used for Generating random floating point values  accorinfg Programmer Choice
+Syntax-1: numpy.random.uniform()--->Generating Any random floating point value between 0.0 to 1.0.
+Syntax-2: numpy.random.unform(low,high)--->Generating Any random floating point value between low and high															
+Syntax-3: numpy.random.uniform(low,high,size)--->Generating Number of Random floating Values (Row, Cols) 
+									between low to high  with size(Single Value)	ie. 1-D	
+									-->Generating Number of Random floating Values (Row, Cols) 
+									between low to high  with size(Rows x Cols)	ie. 2-D
+									-->Generating Number of Random floating Values (Matrices,Row, Cols) 
+									between low to high  with size(Matrices,Rows x Cols)	ie. 3-D	
+===========================================================================================
+ randn()
+-----------------------------------------------------------------------------------------------------------------------------------
+Syntax:
+------------
+=>This function is used for Generating random floating point values for standard Normal Distribution.
+Syntax-1: numpy.random.randn()--->Generating Any random floating point value  can either +ve or -ve.
+Syntax-2: numpy.random.randn(value)--->Generating Number of Random floating Values (Value times) 
+									for standard Normal Distribution and either +ve or -ve
+																										
+Syntax-3: numpy.random.randn(Rows, Cols)--->Generating Number of Random floating Values (Row, Cols) 
+									for standard Normal Distribution and either +ve or -ve with 2-D	
+Syntax-3: numpy.random.randn(No.Matrices, Row, Cols)--->Generating Number of Random floating Values																(No.Matrices,Row, Cols) for standard Normal Distribution															and either +ve or -ve	with 3-D	
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+					 shuffle()
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Syntax:  numpy.random.shuffle(x), here x is ndarrayobject
+	Modify a sequence in-place by shuffling its contents.
+	This function only shuffles the array along the first axis of a
+	multi-dimensional array. The order of sub-arrays is changed but
+	their contents remains the same.
+---------------------------------------------------------------------------
+Examples:  a=np.arange(10)
+	    np.shuffle(a)
+	    print(a)------1D
+Examples:  a=np.randint(1,101,size=(6,5)
+	    np.random.shuffle(a)
+	    print(a)----2D Arrays--Rows Shuffled
+
+Examples:   a=np.arange(48).reshape(4,3,4)
+            np.random.shuffle(a)
+	    print(a)----3D array  [0][0][0]---Matrix Index Shuffled
+==========================================================================================

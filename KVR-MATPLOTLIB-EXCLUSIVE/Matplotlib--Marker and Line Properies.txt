@@ -1,0 +1,57 @@
+=========================================================================
+Markers Concept in line graphs
+========================================================================
+plt.plot(x,y,marker,mec,mfc,ms)
+	x---Set of Values on x-axis
+	y---Set of Values on Y-Axis
+	marker Represents set of Values given bellow
+		mec---marker edge color------r,g,y...hotpink etc
+		mfc---marker face color---- r,g,y..etc
+		ms---marker size--10 11,12...20.etc
+=======================
+Marker Types
+=======================
+Marker	Description
+'o'		Circle	
+'*'		Star	
+'.'		Point	
+','		Pixel	
+'x'		X	
+'X'		X (filled)	
+'+'		Plus	
+'P'		Plus (filled)	
+'s'		Square	
+'D'		Diamond	
+'d'		Diamond (thin)	
+'p'		Pentagon	
+'H'		Hexagon	
+'h'		Hexagon	
+'v'		Triangle Down	
+'^'		Triangle Up	
+'<'		Triangle Left	
+'>'		Triangle Right	
+'1'		Tri Down	
+'2'		Tri Up	
+'3'		Tri Left	
+'4'		Tri Right	
+'|'		Vline	
+'_'		Hline
+====================================================================================================
+Line Properties of line graph
+====================================================================================================
+plt.plot(x,y,ls,lw,c)
+    x--->Set of Values on x-axis
+    y--->Set of Values on Y-Axis
+    ls----->line style---
+		The line style value can be one of the following:
+		Line Syntax	     Description
+		'-'				Solid line	
+		':'				Dotted line	
+		'--'				Dashed line	
+		'-.'				Dashed/dotted line
+
+				OR
+		line style--- solid      dotted   dashed   dashdot   None
+   lw------->line width------10 11 12...20...etc
+   c--------->Line color----r,g,y,hotpink...etc
+=================================================================================================

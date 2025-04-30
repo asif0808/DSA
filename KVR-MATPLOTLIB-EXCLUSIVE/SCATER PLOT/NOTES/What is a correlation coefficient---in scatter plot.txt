@@ -1,0 +1,21 @@
+What is a correlation coefficient---in scatter plot
+======================================
+The correlation coefficient measures the direction and strength of a linear relationship.
+It has a value between -1 and 1
+ 
+ and . Here are a few examples:
+ 
+ 1 is perfect positive association
+              See Fig-1---> PosCor
+--------------------------------------------------
+-1 is perfect Negative association
+	see fig-2----NegCor
+----------------------------------------------------
+-0.5 is weak negative association
+       see fig-3--- 05negcor
+----------------------------------------------------
+ 0.5 is weak positive association
+	 see fig-4--- 05poscor
+----------------------------------------------------
+0 is  No association
+	seefig5----zerocor

@@ -1,0 +1,22 @@
+			=========================================================
+				Numpy---Filtering the Data from 1-D,2-D and n-D
+						(OR)
+				Numpy---Conditional Based Retrieval from 1-D,2-D and n-D
+			=========================================================
+Procedure-1
+-----------------------
+Step-1:   Create a Boolean Array
+----------
+		varname=ndarrayobj with Condition
+	here varname is an object of <class, numpy.ndarray> contains Boolean values called Boolean Array
+	=>In the Boolean Array, False Represents Element Marked for NOT TO SELECT
+	=>In the Boolean Array, True Represents Element Marked for  SELECTION.
+------------
+Step-2 : Pass the Boolean Array ndarray object
+------------			ndarray[boolean array]
+		Here boolean array Represents ndarray object contains True and False
+==============================
+Procedure-2
+-----------------------
+				ndarray[ ndarrayobject with Condition]
+======================================================================================================

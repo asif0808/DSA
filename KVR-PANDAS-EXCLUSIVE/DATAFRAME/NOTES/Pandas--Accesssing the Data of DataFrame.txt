@@ -1,0 +1,13 @@
+=======================================================
+		Accesssing the Data of DataFrame
+=======================================================
+1) DataFrameobj.head(no.of rows)   OR DataFrameobj.head()
+2) DataFrameobj.tail(no.of rows)  (OR) DataFrameobj.tail()
+3) DataFrameobj.describe()
+4) DataFrameobj.shape
+5) DataFrameobj [start:stop:step]
+6) DataFrameobj["Col Name"]
+7) DataFrameobj[ ["Col Name1","Col Name-2"...."Col Name-n"] ]
+8) DataFrameobj[ ["Col Name1","Col Name-2"...."Col Name-n"]] [start:stop:step]
+9) DataFrameobj.iterrows()
+=========================================================================

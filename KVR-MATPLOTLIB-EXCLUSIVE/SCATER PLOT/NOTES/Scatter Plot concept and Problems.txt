@@ -1,0 +1,91 @@
+				=========================================
+					Scatterplots and correlation review
+				=========================================
+What is a scatterplot
+-----------------------------------
+=>A scatter plot is also called a scatter chart, scattergram, or scatter plot, XY graph. 
+=>A scatterplot is a type of data display that shows the relationship between two numerical variables. Each member of 
+   the dataset gets plotted as a point whose coordinates relates to its values for the two variables.
+==========================================================================================
+----------------------
+Problems
+-----------------------
+=>Let us understand how to construct a scatter plot with the help of the below example.
+Draw a scatter plot for the given data that shows the number of games played and scores obtained in each instance.
+
+No. of games	3	5	2	6	7	1	2	7	1	7
+Scores		80	90	75	80	90	50	65	85	40	100
+=============================================================================
+Problems
+-----------------------
+Every year, a meteorologist studying tropical storms predicts how many hurricanes will occur. 
+The table below shows how many hurricanes were predicted and how many hurricanes actually occurred for the years 
+ 2000 to 2005
+
+ 
+Year:		2000	2001	2002       2003       2004    2005
+Predicted	11		13		12		17		15	   17-------------------x axis
+Actual		14		15		12	        16		14	   27-------------------y-axis
+=========================================================================
+===================================================
+Making appropriate scatter plots
+-----------------------------------------------------------------------------------------
+Problem
+------------
+Rossum is curious how different amounts of sunlight will impact the growth of his tomatoes. he exposed some of his tomatoes to varying amounts of sunlight (in hours per day) and recorded the change in their circumferences (in centimeters) after a week. His data is summarized in the table below.
+		Sunlight (hours per day)	:	  0       2       4       6           8
+  
+		Change in circumference (cm)	:1.00  2.50 5.25  10.75   11.25
+ ===================================================================
+Problem 1: Flower height and petal length
+Sam measured the height and petal length (in centimeters) of all the flowers in his garden.
+Height (cm}):      30   20   15  35   10  40
+Petal length(cm) 6     4     2    8     3    9
+ 
+ What is the best description of the relationship between height and petal length for Sam's flowers?
+Choose 1 answer:
+(Choice A)   Positive association
+(Choice B)   Negative association
+(Choice C)   No association
+
+ =============================================================================
+ Vincent gathered groups of  to  people and gave every group the same puzzle to solve. He recorded the number of minutes it took each group to solve the puzzle and plotted the results.
+Which statement is the best description of the association between these variables?
+ 
+ a)  Larger groups Atended to take more time to solve the puzzle.
+b)  Larger groups Atended to take less time to solve the puzzle.
+c)  There is no clear relationship between group size and the amount of time it took to solve the puzzle.
+
+See the Fig
+ ===================================================================================
+ Lynn wants to predict how much fuel her car will use based on its speed. She drove a car 
+ 
+ at each of the speeds below, and she measured how much fuel was used in each case. 
+ Her data is summarized in the graph below.
+ See the Fig
+ ===============================================================================
+ The graph below shows the relationship between life expectancy and income in a random sample of countries.
+Which statement is the best description of the association between these variables?
+See the Fig
+---------------------
+A: Countries with higher income tended to have longer life expectancies.
+B:  Countries with higher income tended to have shorter life expectancies.
+C: There is no clear relationship between income and life expectancy.
+
+ Exp:
+ ---------
+ There is a positive relationship in the data—low values of x are associated with low values of y
+ , and high values of x  are associated with high values of y
+ ===========================================================================
+Cindy wants to predict how much energy she will use to heat her home based on how cold it is outside. 
+The graph below shows the mean amount of gas per day (in cubic meters) that Cindy used each month and the average temperature that month (in degrees Celsius) for one heating season.
+Which statement is the best description of the association between these variables?
+
+A:    As temperature increased, the amount of gas used increased.
+B:  As temperature increased, the amount of gas used decreased.
+C:  There is no clear relationship between temperature and gas use.
+Exp:
+ There is a negative relationship in the data—low values of x are associated with high values of y
+  and high values of x are associated with low values of y.
+ 
+========================================================================

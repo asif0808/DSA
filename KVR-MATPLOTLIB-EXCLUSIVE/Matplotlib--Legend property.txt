@@ -1,0 +1,29 @@
+=========================================================================================
+							Legend property 
+=========================================================================================
+legend property makes us to understand the Functionality of the line
+
+import matplotlib.pyplot as plt
+x=[2,3,4,5]
+y=[val**2 for val in x ]
+z=[val**3 for val in x]
+plt.plot(x,y,label="square")
+plt.plot(x,z,label="cube")
+plt.legend(loc="upper right",facecolor="y",edgecolor="r",fontsize=12)
+plt.show()
+
+		OR
+import matplotlib.pyplot as plt
+x=[2,3,4,5]
+y=[val**2 for val in x ]
+z=[val**3 for val in x]
+lab=["Squares","Cubes"]
+plt.plot(x,y)
+plt.plot(x,z)
+plt.legend(labels=lab,loc="upper right",facecolor="y",edgecolor="r",fontsize=12)
+plt.show()
+
+NOTE:
+-----------
+The Possible Values of "loc" argument are
+ 'best', 'upper right', 'upper left', 'lower left', 'lower right', 'right', 'center left', 'center right', 'lower center', 'upper center', 'center'

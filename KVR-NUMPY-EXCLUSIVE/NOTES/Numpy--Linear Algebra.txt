@@ -1,0 +1,175 @@
+					Numpy Linear Algebra
+				===============================
+=>Linear algebra deals with mathematical concepts related to linear equations and their representations using matrices.
+=>NumPy provides us with functions for performing common linear algebra tasks, such as array multiplication, solving linear systems, and more.
+NumPy Linear Algebra Functions
+---------------------------------------------------
+Here's a list of various functions for performing linear algebra tasks in NumPy.
+Operators	Descriptions
+------------------------------------------
+dot()		calculates product of two arrays
+inner()	calculates inner product of arrays
+outer()	calculates outer product of arrays
+det()		calculates determinant of a matrix
+solve()	solves linear matrix equation
+inv()		calculates the multiplicative inverse of the matrix
+trace()	calculates the sum of diagonal elements
+------------------------------------------------------------------------------------
+NumPy dot() Function
+------------------------------------------------------------------------------------
+We can use the dot() function available in NumPy's linear algebra module to calculate the product of two arrays. For example,
+import numpy as np
+
+array1 = np.array([1, 3, 5])
+array2 = np.array([2, 4, 6])
+# use of dot() to perform array multiplication
+result = np.dot(array1, array2)
+print(result)
+# Output: 44
+Run Code
+In this example, the dot(array1, array2) function computes the dot product of array1 and array2, which is equal to
+1*2 + 3*4 + 5*6 = 44.
+------------------------------------------------------------------------------------
+NumPy inner() Function
+------------------------------------------------------------------------------------
+In NumPy, the inner() function computes the inner product of two arrays, which is the sum of the products of their corresponding entries.
+------------------------------------------------------------------------------------
+Let's see an example of inner() with 2D arrays.
+import numpy as np
+array1 = np.array([[1, 3], 
+                   [5, 7]])
+array2 = np.array([[2, 4], 
+                   [6, 8]])
+
+# inner() for 2D arrays
+result = np.inner(array1, array2)
+
+print(result)
+Run Code
+Output
+
+[[14 30]
+ [38 86]]
+In the above example, inner() first flattens 2D arrays to 1D arrays and then computes the inner product of those flattened arrays.
+
+The resulting 2x2 matrix is the reshaped version of the flattened result.
+
+Here, the inner product is calculated as:
+
+1*2+3*4        1*6+3*8
+5*2+7*4        5*6+7*8
+Note: For 1D arrays, inner() is equivalent to dot().
+------------------------------------------------------------------------------------
+NumPy outer() Function
+------------------------------------------------------------------------------------
+The outer() function in NumPy computes the outer product of two arrays, which is the product of all possible pairs of their entries.
+------------------------------------------------------------------------------------
+Let's see an example.
+import numpy as np
+array1 = np.array([1, 3, 5])
+array2 = np.array([2, 4, 6])
+# outer() to perform outer multiplication
+result = np.outer(array1, array2)
+print(result)
+Run Code
+Output
+			[[ 2  4  6]
+			 [ 6 12 18]
+			 [10 20 30]]
+Here, the outer product is calculated as:
+1*2      1*4       1*6        
+3*2      3*4       3*6
+5*2      5*4       5*6
+------------------------------------------------------------------------------------
+NumPy det() Function
+------------------------------------------------------------------------------------
+In NumPy, we use the det() function from the NumPy linalg module to calculate the determinant of a square matrix. For example,
+
+import numpy as np
+
+# define a square matrix
+array1 = np.array([[1, 3], 
+                  [5, 7]])
+
+# compute the determinant of array1
+result = np.linalg.det(array1)
+
+
+print(result)
+ 
+# Output: -7.9999999
+Run Code
+Here, we have used the det() function from the linalg module to calculate the determinant of the square matrix named array1.
+------------------------------------------------------------------------------------
+NumPy solve() Function
+------------------------------------------------------------------------------------
+In NumPy, we use the solve() function to solve a system of linear equations.
+------------------------------------------------------------------------------------
+For a given matrix A and a vector b, solve(A, b) finds the solution vector x that satisfies the equation Ax = b.
+
+Let's see an example.
+
+import numpy as np
+
+# define the coefficient matrix A
+A = np.array([[2, 4], 
+                      [6, 8]])
+
+# define the constant vector b
+b = np.array([5, 6])
+
+# solve the system of linear equations Ax = b
+x = np.linalg.solve(A, b)
+print(x)
+
+# Output: [-2.  2.25]
+Run Code
+In this example, we have used the solve() function from the linalg module to solve the system of linear equations.
+
+Here, the output is [-2. 2.25], which is the solution to the system of linear equations 2x + 4y = 5 and 6x + 8y = 6.
+
+Note: The solve() function only works for square matrices, and it assumes that the matrix A has a non-zero determinant, else solve() will raise a LinAlgError exception.
+======================================================================================
+NumPy inv() Function
+=====================================================================================
+We use the inv() function from the linalg module in NumPy to find the inverse of a square matrix. For example,
+
+import numpy as np
+
+# define a 2x2 matrix
+array1 = np.array([[2, 4], 
+                  [6, 8]])
+
+# compute the inverse of the matrix
+result = np.linalg.inv(array1)
+
+print(result)
+Run Code
+Output
+
+[[-1.    0.5 ]
+ [ 0.75 -0.25]]
+Here, we have used the linalg.inv() function to calculate the inverse of the array1 matrix.
+
+Note: Not all matrices are invertible and if you try to compute the inverse of a matrix having determinant zero inv() will raise the LinAlgError exception.
+------------------------------------------------------------------------------------
+NumPy trace() Function
+------------------------------------------------------------------------------------
+In NumPy, we use the trace() function to compute the sum of the diagonal elements of a matrix. For example,
+
+import numpy as np
+
+# define a 3x3 matrix
+array1 = np.array([ [6, 3, 5], 
+				 [9, 2, 1], 
+				 [7, 8, 4]])
+
+# compute the trace of the matrix
+result = np.trace(array1)
+
+print(result)
+
+# Output: 12
+Run Code
+In this example, the diagonal elements of the matrix are 6, 2, and 4, so the sum of these elements is 12. So, the trace() function returns this value as the output.
+=============================================================================================

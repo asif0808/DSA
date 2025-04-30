@@ -1,0 +1,25 @@
+
+The table below shows the information on how much sleep Rahul got each night for a week. 
+Draw the line graph based on the given information.
+
+Day				Sleep
+Monday				7
+Tuesday				6
+Wednesday			5
+Thursday				8
+Friday				9
+Saturday				9
+Sunday				5
+=================================================================================
+The table represents Akshay’s weight in kilograms for five months. Draw the line graph for the information provided.
+Month
+
+Akshay’s weight in kilogram
+January		48
+February		53
+March		60
+April		68
+May			72
+
+===========================================================================
+                      

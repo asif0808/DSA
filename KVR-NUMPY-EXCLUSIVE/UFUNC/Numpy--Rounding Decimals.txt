@@ -1,0 +1,60 @@
+		======================================
+			Numpy--Rounding Decimals
+		======================================
+=>There are primarily five ways of rounding off decimals in NumPy:
+
+		1. trunc() OR 	fix()
+		2. around()
+		3. floor()
+		4. ceil()
+		
+------------------------
+trunc() OR 	fix()
+------------------------
+Remove the decimals, and return the float number closest to zero. Use the trunc() and fix() functions.
+-------------------------------------
+import numpy as np
+arr = np.trunc([-3.1666, 3.6667])
+print(arr)   # [-3.  3.]
+---------
+Example
+---------
+import numpy as np
+arr = np.fix([-3.1666, 3.6667])
+print(arr)   # [-3.  3.]
+----------------
+2.around()
+----------------
+The around() function increments preceding digit or decimal by 1 if >=5 else do nothing.
+E.g. round off to 1 decimal point, 3.16666 is 3.2
+--------
+Example
+----------
+Round off 3.1666 to 2 decimal places:
+import numpy as np
+arr = np.around(3.1666, 2)
+print(arr)  # 3.17
+-----------------
+3.floor()
+-----------------
+The floor() function rounds off decimal to nearest lower integer.
+E.g. floor of 3.166 is 3.
+--------
+Example
+--------
+Floor the elements of following array:
+import numpy as np
+arr = np.floor([-3.1666, 3.6667])
+print(arr) # [-4.  3.]
+----------------------------
+4.ceil()
+----------------------------
+The ceil() function rounds off decimal to nearest Highest OR  upper integer.
+E.g. ceil of 3.166 is 4.
+----------
+Example
+---------
+import numpy as np
+arr = np.ceil([-3.1666, 3.6667])
+print(arr) # [-3.  4.]
+=========================================x============================================ 

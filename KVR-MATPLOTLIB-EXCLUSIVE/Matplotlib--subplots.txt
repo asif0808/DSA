@@ -1,0 +1,156 @@
+		================================================
+					Matplotlib Subplot
+		================================================
+=>Display Multiple Plots, we use subplot() function, where we can draw multiple plots in one figure:
+=>The subplot() function takes three arguments that describes the layout of the figure.
+=>Syntax:  plt.subplot(No.Rows,No.Cols, Index of Plot)
+-------------------------------------------------------------------------------------------------------------------------------
+Example Draw 2 plots:
+-------------------------------------------------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+
+#plot 1:
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+
+plt.subplot(1, 2, 1)
+plt.plot(x,y)
+
+#plot 2:
+x = np.array([0, 1, 2, 3])
+y = np.array([10, 20, 30, 40])
+
+plt.subplot(1, 2, 2)
+plt.plot(x,y)
+
+plt.show()
+-------------------------------------------------------------------------------------------------------------------------------
+NOTE:   In     plt.subplot(1, 2, 1)
+	#The figure has 1 row, 2 columns, and this plot is the (1) first plot.
+		plt.subplot(1, 2, 2)
+	#The figure has 1 row, 2 columns, and this plot is the (2) second plot.
+-------------------------------------------------------------------------------------------------------------------------------
+=>So, if we want a figure with 2 rows an 1 column (meaning that the two plots will be displayed on top of each other instead of side-by-side)
+-------------------------------------------------------------------------------------------------------------------------------
+we can write the syntax like this:
+
+Example
+Draw 2 plots on top of each other:
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+#plot 1:
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+
+plt.subplot(2, 1, 1)
+plt.plot(x,y)
+
+#plot 2:
+x = np.array([0, 1, 2, 3])
+y = np.array([10, 20, 30, 40])
+
+plt.subplot(2, 1, 2)
+plt.plot(x,y)
+
+plt.show()
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+You can draw as many plots you like on one figure
+ just descibe the number of rows, columns, and the index of the plot.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Example
+Draw 6 plots:
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+
+plt.subplot(2, 3, 1)
+plt.plot(x,y)
+#----------------------------------------------------
+x = np.array([0, 1, 2, 3])
+y = np.array([10, 20, 30, 40])
+plt.subplot(2, 3, 2)
+plt.plot(x,y)
+#----------------------------------------------------
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+
+plt.subplot(2, 3, 3)
+plt.plot(x,y)
+#-----------------------------------------------------
+x = np.array([0, 1, 2, 3])
+y = np.array([10, 20, 30, 40])
+plt.subplot(2, 3, 4)
+plt.plot(x,y)
+#-------------------------------------------------------
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+plt.subplot(2, 3, 5)
+plt.plot(x,y)
+#--------------------------------------------------------
+x = np.array([0, 1, 2, 3])
+y = np.array([10, 20, 30, 40])
+
+plt.subplot(2, 3, 6)
+plt.plot(x,y)
+
+plt.show()
+=================================================================
+Title
+----------------------------------------------------------------------------------------------------------------
+You can add a title to each plot with the title() function:
+
+Example
+2 plots, with titles:
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+#plot 1:
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+
+plt.subplot(1, 2, 1)
+plt.plot(x,y)
+plt.title("SALES")
+
+#plot 2:
+x = np.array([0, 1, 2, 3])
+y = np.array([10, 20, 30, 40])
+
+plt.subplot(1, 2, 2)
+plt.plot(x,y)
+plt.title("INCOME")
+plt.suptitle("Sales and Income plot")
+plt.show()
+===========================================================================
+			Other way
+===========================================================================
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig = plt.figure(figsize=(12, 6))
+
+x = np.arange(0, 10, 0.1)
+y = np.sin(x)
+z = np.cos(x)
+
+ax1 = fig.add_subplot(121)
+ax2 = fig.add_subplot(122)
+
+ax1.set_title('Full view')
+ax1.plot(y, color='blue', label='Sine wave')
+ax1.plot(z, color='black', label='Cosine wave')
+
+ax2.set_title('Truncated view')
+ax2.plot(y, color='blue', label='Sine wave')
+ax2.plot(z, color='black', label='Cosine wave')
+
+ax2.set_xlim([25, 50])
+
+plt.show()

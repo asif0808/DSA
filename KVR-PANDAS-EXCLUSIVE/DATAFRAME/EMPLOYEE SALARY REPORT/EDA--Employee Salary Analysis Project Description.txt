@@ -1,0 +1,4 @@
+		==============================================
+			EDA--Employee Salary Analysis Project Description
+		==============================================
+An Exploratory Data Analysis of the dataset of San Francisco Employee Compensation for Fiscal Year 2014-15 obtained from  was performed . After extensive cleaning, filtering and manipulation using R, SAS and Advanced Excel to detect potential outliers, the dataset was reduced to 83946 observations and 18 variables to probe into the statistics and draw insightful information using MS-SQL. The results of analysis are presented graphically for better data-visualization using Tableau

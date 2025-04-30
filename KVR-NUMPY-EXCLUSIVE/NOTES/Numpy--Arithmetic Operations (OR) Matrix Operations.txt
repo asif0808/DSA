@@ -1,0 +1,239 @@
+	=========================================
+			Numpy--Arithmetic Operations (OR) Matrix Operations
+	=========================================
+=>With Traditional Python Code to Perform Arithmetic Operations on Traditional Python List Objects, we need write Some Number of Lines of Code. which is complex for Python Programmer.
+=>The Avoid the above complexity, we have numpy module and It provides Pre-Defined Functions for perfoorming Arithmetic Operations. They are
+		a) add()
+		b) subtract()
+		c) multiply()
+		d) dot()  or matmul()
+		e) divide()
+		f) floor_divide()
+		g) mod()
+		h) power()
+=>All the arithmetic Functions can also be perfomed w.r.t Arithmetic Operators.
+=>All these Arithmetic Operations are called Matrix Operations.
+---------------
+a) add():
+--------------
+Syntax:-    varname=numpy.add(ndarrayobj1, ndarrayobj2)
+=>This function is used for adding elements of ndarrayobj1, ndarrayobj2 and result can be displayed
+Examples:
+-----------------
+>>> l1=[ [10,20],[30,40] ]
+>>> l2=[[1,2],[3,4]]
+>>> a=np.array(l1)
+>>> b=np.array(l2)
+>>> a
+	array([[10, 20],
+	       [30, 40]])
+>>> b
+	array([[1, 2],
+	       [3, 4]])
+>>> c=np.add(a,b)
+>>> c
+		array([[11, 22],
+		          [33, 44]])
+--------------------------------------------------------------------------------
+>>> l1=[[10,20],[30,40]]
+>>> l2=[[1,2],[3,4]]
+>>> a=np.array(l1)
+>>> b=np.array(l2)
+>>> a
+		array([[10, 20],
+		       [30, 40]])
+>>> b
+		array([[1, 2],
+		       [3, 4]])
+>>> c=a+b  # we used operator + instead of add()
+>>> c
+	array([[11, 22],
+	       [33, 44]])
+=================================
+b) subtract()
+------------------------------
+Syntax:-    varname=numpy.subtract(ndarrayobj1, ndarrayobj2)
+=>This function is used for subtracting elements of ndarrayobj1, ndarrayobj2 and result can be displayed
+
+Examples:
+------------------
+>>> l1=[[10,20],[30,40]]
+>>> l2=[[1,2],[3,4]]
+>>> a=np.array(l1)
+>>> b=np.array(l2)
+>>> a
+array([[10, 20],
+       [30, 40]])
+>>> b
+array([[1, 2],
+       [3, 4]])
+>>> c=np.subtract(a,b)
+>>> c
+array([[ 9, 18],
+       [27, 36]])
+-----------------------------------
+>>> d=a-b    # we used operator - instead of subtract()
+>>> d
+array([[ 9, 18],
+       [27, 36]])
+===================================
+c) multiply():
+-----------------------
+Syntax:-    varname=numpy.multiply(ndarrayobj1, ndarrayobj2)
+=>This function is used for performing element-wise multiplication of ndarrayobj1, ndarrayobj2 and result can be displayed
+
+Examples:
+>>> l1=[[1,2],[3,4]]
+>>> l2=[[5,6],[4,3]]
+>>> a=np.array(l1)
+>>> b=np.array(l2)
+>>> a
+array([[1, 2],
+           [3, 4]])
+>>> b
+array([[5, 6],
+          [4, 3]])
+>>> c=np.multiply(a,b)
+>>> c
+array([[ 5, 12],
+           [12, 12]])
+-----------------------------------------------
+>>> e=a*b   # we used operator * instead of multiply()
+>>> e
+array([[ 5, 12],
+       [12, 12]])
+------------------------------------------
+d) dot()  (or)  matmul()
+=>To perform Matrix Multiplication, we  use dot(), matmul()
+
+Syntax:-    varname=numpy.dot(ndarrayobj1, ndarrayobj2)
+Syntax:-    varname=numpy.matmul(ndarrayobj1, ndarrayobj2)
+
+=>These functions is used for performing actual matrix multiplication of ndarrayobj1, ndarrayobj2 and result can be displayed
+Examples:
+-----------------
+Examples:
+>>> l1=[[1,2],[3,4]]
+>>> l2=[[5,6],[4,3]]
+>>> a=np.array(l1)
+>>> b=np.array(l2)
+>>> a
+	array([[1, 2],
+	       [3, 4]])
+>>> b
+	array([[5, 6],
+	       [4, 3]])
+>>> d=np.dot(a,b)
+>>> d
+	array([[13, 12],
+	       [31, 30]])
+>>> e=np.matmul(a,b)
+>>> e
+	array([[13, 12],
+	       [31, 30]])
+
+-----------------------------------------------------------------------------
+e) divide()
+-----------------------------------
+Syntax:-    varname=numpy.divide(ndarray1,ndarry2)
+=>This function is used for performing element-wise division of ndarrayobj1, ndarrayobj2 and result can be displayed
+
+>>> l1=[[10,20],[30,40]]
+>>> l2=[[1,2],[3,4]]
+>>> a=np.array(l1)
+>>> b=np.array(l2)
+>>> a
+	array([[10, 20],
+	       [30, 40]])
+>>> b
+	array([[1, 2],
+	       [3, 4]])
+>>> c=np.divide(a,b)
+>>> c
+	array([[10., 10.],
+	       [10., 10.]])
+---------------------------------------------------------------
+>>> d=a/b    # we used operator / instead of divide()
+>>> d
+	array([[10., 10.],
+	       [10., 10.]])
+---------------------------------------------------------------------------------------------
+f) floor_divide()
+-----------------------------------
+Syntax:-    varname=numpy.floor_divide(ndarray1,ndarry2)
+=>This function is used for performing element-wise floor division of ndarrayobj1, ndarrayobj2 and result can be displayed
+>>> l1=[[10,20],[30,40]]
+>>> l2=[[1,2],[3,4]]
+>>> a=np.array(l1)
+>>> b=np.array(l2)
+>>> a
+	array([[10, 20],
+	       [30, 40]])
+>>> b
+	array([[1, 2],
+	       [3, 4]])
+>>> c=np.floor_divide(a,b)
+>>> c
+	array([[10, 10],
+	       [10, 10]])
+---------------------------------------------------------------
+>>> d=a//b    # we used operator // instead of floor_divide()
+>>> d
+	array([[10, 10],
+	       [10, 10]])
+--------------------------------------------------------------------------------------------------------------------
+g) mod()
+-------------------------------
+Syntax:-    varname=numpy.mod(ndarray1,ndarry2)
+=>This function is used for performing element-wise modulo division of ndarrayobj1, ndarrayobj2 and result can be displayed
+--------------------
+Examples:
+---------------------
+>>> l1=[[10,20],[30,40]]
+>>> l2=[[1,2],[3,4]]
+>>> a=np.array(l1)
+>>> b=np.array(l2)
+>>> a
+	array([[10, 20],
+	       [30, 40]])
+>>> b
+	array([[1, 2],
+	       [3, 4]])
+>>> c=np.mod(a,b)
+>>> c
+	array([[0., 0.],
+	       [0., 0.]])
+------------------------------------------------------------------------
+=>We can also do with operator % 
+>>> e=a%b
+>>> e
+	array([[0, 0],
+		    [0, 0]],     dtype=int32)
+-----------------------------------------------------------------------------------------------------
+h) power():
+---------------------------------------
+Syntax:-    varname=numpy.power(ndarray1,ndarry2)
+=>This function is used for performing element-wise exponential of ndarrayobj1, ndarrayobj2 and result can be displayed
+
+---------------------------------------
+
+>>> l1=[[10,20],[30,40]]
+>>> l2=[[1,2],[3,4]]
+>>> a=np.array(l1)
+>>> b=np.array(l2)
+>>> a
+	array([[10, 20],
+	       [30, 40]])
+>>> b
+	array([[1, 2],
+	       [3, 4]])
+>>>c=np.power(a,b)
+>>>print(c)
+	array([[     10,     400],
+	       [  27000, 2560000]],  
+--------------------------------------------
+>>> f=a**b   # Instead of using  power() we can use ** operator
+>>> f
+	array([[     10,     400],
+	       [  27000, 2560000]],    dtype=int32)
+==================================X=======================

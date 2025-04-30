@@ -1,0 +1,42 @@
+
+==================================
+Basic components of Graph
+==================================
+=>A graph has the following basic components:
+=>Figure or chart area:  The entire area covered by the graph is known as a figure.
+					It can be also considered as a canvas or chart area also.
+=>Axis:   These are the number of lines generated on the plot. Basically, there are two axis X and Y-axis.
+=>Artist: The components like text objects, Line 2D objects, collection objects, etc.
+=>Titles: There are few titles involved with your charts such as Chart Title, Axis titles, etc.
+=>Legends: Legends are the information that represents data with lines or dots.
+		after getting familiar with parts of the graph
+===============================================================================================
+Steps – how to create graphs using matplotlib
+===============================================================================================
+Step 1:   Installation of matplotlib
+		Examples: pip install matplotlib
+ 
+Step 2:		 import module
+			Without instance:    import matplotlib.pyplot
+			With instance:         import matplotlib.pyplot as  plt 
+								OR 
+							  from matplotlib import pyplot as plt
+
+Step 3 : Choose desired plot type (graph type)
+Step 4 : Give proper labels to axis, categories
+		A graph is made up of two-axis i.e. X and Y-axis. 
+		In this step label them as per the need as well as apply proper labels for categories also.
+Step 5: Add data points
+		The next point is to add data points. 
+		Data points depict the point on the plot at a particular place.
+Step 6:  Add more functionality like colours, sizes etc
+		To make your graphs more effective and informative use different colours and different sizes.
+ ========================================================================================== 
+Matplotlib provides the following types of graphs in python:
+		Line plot
+		Bar graph
+		Histogram
+		Pie chart
+		Scatter plot OR chart
+============================================================================================
+               

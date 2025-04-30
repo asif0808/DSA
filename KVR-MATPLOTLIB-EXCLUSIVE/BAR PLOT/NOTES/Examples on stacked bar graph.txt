@@ -1,0 +1,65 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+#Drawing Stacked Bar Graph
+year=["2019","2020","2021","2022"]
+placements=[150,100,115,125]
+cse=[70,40,60,80]
+it=[30,20,25,35]
+ece=[20,19,20,18]
+plt.bar(year,cse)
+plt.bar(year,it,bottom=cse)
+plt.show()
+--------------------------------------------------------------------------------------
+#Drawing Stacked Bar Graph
+year=["2019","2020","2021","2022"]
+placements=[150,100,115,125]
+cse=[70,40,60,80]
+it=[30,20,25,35]
+ece=[20,19,20,18]
+ece_start=[cse[i]+it[i]   for i in range(len(year))  ]
+
+plt.bar(year,cse)
+plt.bar(year,it,bottom=cse)
+plt.bar(year,ece,bottom=ece_start)
+plt.show()
+--------------------------------------------------------------------------------------
+#Drawing Stacked Bar Graph--vertical
+year=["2019","2020","2021","2022"]
+cse=[70,40,60,80]
+it=[30,20,25,35]
+ece=[20,19,20,18]
+ece_start=[cse[i]+it[i] for i in range(len(year))]
+
+plt.bar(year,cse,color="red")
+plt.bar(year,it,bottom=cse,color="orange")
+plt.bar(year,ece,bottom=ece_start,color="purple")
+plt.show()
+--------------------------------------------------------------------------------------
+
+#Drawing Stacked Bar Graph--horizontal
+year=["2019","2020","2021","2022"]
+cse=[70,40,60,80]
+it=[30,20,25,35]
+ece=[20,19,20,18]
+ece_start=[cse[i]+it[i] for i in range(len(year))]
+
+plt.barh(year,cse)
+plt.barh(year,it,left=cse)
+plt.barh(year,ece,left=ece_start)
+plt.show()
+--------------------------------------------------------------------------------------
+#Drawing Stacked Bar Graph--horizontal
+year=["2019","2020","2021","2022"]
+placements=[150,100,115,125]
+cse=[70,40,60,80]
+it=[30,20,25,35]
+ece=[20,19,20,18]
+ece_start=[cse[i]+it[i] for i in range(len(year))]
+
+plt.barh(year,cse,label="CSE")
+plt.barh(year,it,left=cse,label="IT")
+plt.barh(year,ece,left=ece_start,label="ECE")
+plt.legend()
+plt.show()
+--------------------------------------------------------------------------------------

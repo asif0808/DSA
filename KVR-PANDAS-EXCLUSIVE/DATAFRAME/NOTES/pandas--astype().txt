@@ -1,0 +1,153 @@
+		==========================================
+			pandas--astype()
+		==========================================
+DataFrame.astype() function is used to cast a column data type (dtype) in pandas object, it supports String, flat, date, int, datetime any many other dtypes supported by Numpy.
+This comes in handy when you wanted to cast the DataFrame column from one data type to another.
+------------------
+Key Points –
+-------------------
+Use the astype() method to convert strings to integers in Pandas.
+Ensure the string values represent valid integers, otherwise, the conversion will raise errors.
+Handle missing or non-numeric values appropriately to avoid conversion issues.
+-----------------------------------------------------------------
+DataFrame.astype() – Cast All Columns Data Type (dtype)
+
+By default pandas astype() function tries to cast all DataFrame columns to specified numpy.dtype or Python types (int, string, float). If any of the columns are unable to cast due to the invalid data or nan, it raises the error ‘ValueError: invalid literal’ and fails the operation.
+
+The below example demonstrates casting all columns data types.
+
+
+# DataFrame.astype() - Cast All Columns Data Type (dtype)
+import pandas as pd
+import numpy as np
+# Create DataFrame from Dictionary
+technologies = {
+    'Fee' :["20000","25000","26000"],
+    'Discount':["1000","2300","1500"]
+              }
+df = pd.DataFrame(technologies)
+print(df.dtypes)
+
+# Output:
+# Fee         object
+# Discount    object
+# dtype: object
+DataFrame.dtypes returns the Column name and dtypes for all DataFrame columns. Note that the above DataFrame has object types for all columns.
+
+Now let’s cast the data type to 64-bit signed integer, you can use numpy.int64,numpy.int_, int64 or int as param. To cast to 32-bit signed integer, use numpy.int32, int32.
+
+
+# Cast all columns to int
+df = df.astype(np.int64)
+df = df.astype('int64')
+df = df.astype('int')
+
+print(df.dtypes) 
+
+# output:
+# Fee         int64
+# Discount    int64
+# dtype: object
+Notice that it updated all columns with the new dtype.
+----------------------------------------------------------------
+# Cast all columns to string
+df = df.astype('string')
+print(df.dtypes)
+
+# Output:
+# Fee         string
+# Discount    string
+# dtype: object
+Let’s cast it to float type using numpy.float64, numpy.float_, float
+
+
+# Cast all columns to float
+df = df.astype('float')
+print(df.dtypes)
+
+# Output:
+# Fee         float
+# Discount    flat
+# dtype: object
+-----------------------------------------------------------------
+Change Specific Column Type
+----------------------------------------------------------------
+Similarly, you can also change the specific column type by using Series.astype() function, since each column on DataFrame is pandas Series, I will get the column from DataFrame as Series and use astype() function. In the below example df.Fee or df['Fee'] returns Series object.
+
+
+# Cast specific column type
+df.Fee = df.Fee.astype('int')
+(or)
+df.Fee = df['Fee'].astype('int')
+print(df.dtypes)
+
+# Output:
+# Fee          int64
+# Discount    object
+# dtype: object
+--------------------------------------------------
+astype() – Cast Multiple Columns Using Dict
+--------------------------------------------------
+dtype param of the astype() function also supports Dictionary in format {col: dtype, …} where col is a column label and dtype is a numpy.dtype or Python type (int, string, float) to cast one or multiple DataFrame columns.
+
+
+# Astype() - Cast Multiple Columns Using Dict 
+import pandas as pd
+import numpy as np
+# Create DataFrame from Dictionary
+technologies = {
+    'Courses':["Spark","PySpark","Hadoop"],
+    'Fee' :["20000","25000","26000"],
+    'Duration':['30day','40days','35days'],
+    'Discount':["1000","2300","1500"]
+              }
+
+df = pd.DataFrame(technologies)
+print(df.dtypes)
+
+# Output:
+# Courses     object
+# Fee         object
+# Duration    object
+# Discount    object
+# dtype: object
+Now, by using the pandas DataFrame.astype() function, cast the Courses column to string, Fee column to int and Discount column to float.
+
+
+# Apply cast type for multiple columns
+df2 = df.astype({'Courses':'string','Fee':'int','Discount':'float'})
+print(df2.dtypes)
+
+# Output:
+# Courses      string
+# Fee           int64
+# Duration     object
+# Discount    float64
+# dtype: object
+-------------------------------------------------------------------
+astype() with raise or ignore Error
+--------------------------------------------------------------------
+Finally, let’s see how you can raise or ignore the error while casting, to do so you should use errors param. By default, it uses raise as a value meaning generate an exception when unable to cast due to invalid data for type.
+
+From our DataFrame Courses column have string data, let’s cast this to int and see what happens.
+
+
+# Raise error when unable to cast
+df.Courses = df.Courses.astype('int')
+
+# Output:
+# ValueError: invalid literal for int() with base 10: 'Spark'
+As you see, it raised the error when unable to cast. Now let’s suppress the exception using ignore value on errors param. With this, when errors happen it ignores the error and returns the same object without updating.
+
+
+# Ignore error when unable to cast
+df.Courses = df.Courses.astype('int', errors='ignore')
+print(df.dtypes)
+
+# Output:
+# Courses      string
+# Fee           int64
+# Duration     object
+# Discount    float64
+# dtype: object
+=====================================x================================================

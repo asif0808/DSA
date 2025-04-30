@@ -1,0 +1,17 @@
+	===================================================
+		Python Traditional List  VS  Numpy Module
+	===================================================
+Similarities of python  Traditional List  VS  Numpy Module:
+-----------------------------------------------------------------------------------------
+=>An object of list used to store multiple values of same type or different type and both types (unique +duplicates) in single object.
+=>In Numpy Programming, the data is organized in the object of "ndarray", which is one of the pre-defined class in numpy module. Hence an object of ndarray can store  same type or different type and both types (unique +duplicates) in single object.
+=>The objects of ndarray and list are mutable (changes can takes place at same address)
+----------------------------------------------------------------------------------------------------------------------
+Differences between Python Traditional List  and  ndarray object of Numpy Module:
+----------------------------------------------------------------------------------------------------------------------
+=>An object of list contains both homogeneous  and hetrogeneous values where as an object of ndarray of numpy can store only similar type of values(even we store different values, internally they are treated as similar type by treating all values of type "object" ).
+=>On the object of list, we can't perform Vector Based Operations. where as on the object of ndarray, we can perform Vector based operations.
+=>In large sampling of data, List based applications takes more memory space where as ndarray object takes less memory space.
+=>List based applications are not effiecient  bcoz list object values takes more time to extract or retrive ( they are available at different Address) where as  numpy based applications are efficient bcoz of ndarray object values takes less  time to extract or retrive( they are available at same Address / clustered). 
+=>List object can't perform complex mathematical operations where as  an object of ndarray can perform complex mathematical operations.
+===============================================X==================================

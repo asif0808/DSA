@@ -1,0 +1,20 @@
+===============================================================================================
+						  identity():
+===============================================================================================
+=>This function always bulid Identity or unit matrix 
+=>Syntax:-  varname=numpy.identity(N,dtype)
+=>Here N represents Either we can take Rows or Columns and PVM takes as NXN Matrix (Square Matrix--Unit or Identity)
+===============================================================================================
+							eye()
+===============================================================================================
+=>The eye() function is used to create a 2-D array with ones on the diagonal and zeros elsewhere.
+=>The eye() function is commonly used in linear algebra and matrix operations. It is useful for generating matrices to transform, rotate, or scale vectors. It can also be used in scientific computing for solving differential equations, optimization, and signal processing.
+-------------------------
+Syntax:   numpy.eye(N, M=None, k=0, dtype)
+-------------------------
+N---->Number of rows in the output.	Required
+M--->Number of columns in the output. If None, defaults to N.	
+k--->	Index of the diagonal: 0 (the default) refers to the main diagonal, a positive value refers to an upper diagonal, and a 
+        negative value to a lower diagonal.	
+dtype--->Data-type of the returned array.	
+===============================================================================================

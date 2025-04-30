@@ -1,0 +1,122 @@
+			====================================
+					Series
+			====================================
+=>It is a One-Dimensional Labelled Array Capable of Storing / Holding Homogeneous data of any type      (Integer, String, float,.........Python objects  etc).
+=>The Axis Labels are collectively called Index.
+=>Pandas Series is nothing but a column value in excel sheet.
+=>Pandas Series Values are Mutable.
+=>Pandas Series contains Homogeneous Data ( Internally even we store different types values , They are treated as object type)
+	----------------------------------------------------------------------------------------------------
+				Creating a Series
+	-------------------------------------------------------------------------------------------------------
+=>A Series object can be created by using the folowing Syntax:
+Syntax:-
+--------------
+		varname=pandas.Series(object, index, dtype)
+-------------------
+Explanation:-
+-------------------
+=>Here varname is an object of <class, pandas.core.series.Series >
+=>pandas is one of the pre-defined third party module name	
+=>Series() is pre-defined Function in pandas module and it is used for creating an  object of Series class.
+=>'object' can either int, float, complex, bool, str, bytes, bytearray,range, list,tuple,ndarray,dict .....etc (But not set type bcoz they are un-ordered)
+=>'index' represents the position of values present Series object. The default value of  Index starts from 0 to n-1, Here n represents number of values in Series object. Programatically we can give our own Index Values.
+=>'dtype' represents data type (Ex:- int32, ,int64, float32, float64...etc)
+-------------------------------------------------------------------------------------------------------
+Examples:-    Create a series for 10 20  30 40 50 60
+
+>>> import pandas as pd
+>>> import numpy as np
+>>> lst=[10,20,30,40,50,60]
+>>> s=pd.Series(lst)
+>>> print(s,type(s))
+				0    10
+				1    20
+				2    30
+				3    40
+				4    50
+				5    60
+dtype: int64                  <class 'pandas.core.series.Series'>
+----------------------------
+>>> lst=[10,20,30,40,50,60]
+>>> s=pd.Series(lst,dtype=float)
+>>> print(s,type(s))
+		0    10.0
+		1    20.0
+		2    30.0
+		3    40.0
+		4    50.0
+		5    60.0
+dtype: float64 <class 'pandas.core.series.Series'>
+------------------------------------------------------------------
+>>> lst=["Rossum","Gosling","Travis","MCKinney"]
+>>> a=np.array(lst)
+>>> a ------array(['Rossum', 'Gosling', 'Travis', 'MCKinney'], dtype='<U8')
+>>> print(a, type(a))--['Rossum' 'Gosling' 'Travis' 'MCKinney'] <class 'numpy.ndarray'>
+>>> s=pd.Series(a)
+>>> print(s,type(s))
+		0      Rossum
+		1     Gosling
+		2      Travis
+		3    MCKinney
+dtype: object     <class 'pandas.core.series.Series'>
+----------------------------------------------------------------------
+>>>lst=[10,"Rossum",34.56,"Author"]
+>>> s=pd.Series(lst)
+>>> print(s,type(s))
+		0        10
+		1    Rossum
+		2     34.56
+		3    Author
+dtype: object           <class 'pandas.core.series.Series'>
+--------------------------------------------------------------------------------------------
+	Creating an Series object with Programmer-defined Index
+--------------------------------------------------------------------------------------------
+>>> lst=[10,"Rossum",34.56,"Author"]
+>>> print(lst)--------[10, 'Rossum', 34.56, 'Author']
+>>> s=pd.Series(lst,index=["Stno","Name","Marks","Desg"])
+>>> print(s)
+		Stno         10
+		Name     Rossum
+		Marks     34.56
+		Desg     Author
+		dtype: object
+>>> print(s["Stno"])-------10
+------------------------------------------------------------------------------
+>>> lst=["Rossum","Gosling","Travis","MCKinney"]
+>>> s=pd.Series(lst,index=[100,200,300,400])
+>>> print(s,type(s))
+			100      Rossum
+			200     Gosling
+			300      Travis
+			400    MCKinney
+dtype: object <class 'pandas.core.series.Series'>
+----------------------------------------------------------------------------------
+	Creating a Series object from dict 
+-----------------------------------------------------------------------------------
+=>A dict object can be used for creating a series object
+=>If we use dict object in Series() then keys can be taken as Indices (Or Indexes) 
+    automatically and corresponding values of dict can be taken as Series data.
+----------------
+Examples:
+---------------
+>>> import pandas as pd
+>>> d1={"sub1":"Python","sub2":"Java","sub3":"Data Science","sub4":"ML"}
+>>> print(d1)--{'sub1': 'Python', 'sub2': 'Java', 'sub3': 'Data Science', 'sub4': 'ML'}
+>>> s=pd.Series(d1)
+>>> print(s)
+		sub1          Python
+		sub2            Java
+		sub3    Data Science
+		sub4              ML
+		dtype: object
+>>> d2={"RS":2.3,"JG":1.2,"MCK":4.5,"TOLI":2.4}
+>>> print(d2)---{'RS': 2.3, 'JG': 1.2, 'MCK': 4.5, 'TOLI': 2.4}
+>>> s=pd.Series(d2)
+>>> print(s)
+		RS      2.3
+		JG      1.2
+		MCK     4.5
+		TOLI    2.4
+		dtype: float64
+===============================X==============================

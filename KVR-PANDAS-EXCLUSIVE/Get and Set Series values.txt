@@ -1,0 +1,296 @@
+		==========================================
+			Get and Set Series values
+		===========================================
+In this we will learn how to access and modify Pandas Series elements.
+----------------------
+INDEX
+-----------------------
+=>Accessing Series elements
+	Accessing Series elements using Positional Indexing
+	Access Series elements using Label names
+	Access subset of Series using Index / Label Range
+	Access multiple elements of Series by specific index positions
+	Access multiple elements of Series by specific label names
+=>Changing elements in the Series
+	Change single element in Series by index position
+	Change single element in Series by label value
+	Change multiple element in Series
+=============================================================================================
+Accessing Series elements
+----------------------------------------------------------------------------------------------	
+Series is a labeled one-dimensional array. Therefore, we can access elements in Series either by positional indexing or by label names. Let’s see both the techniques
+-----------------------------------------------------------
+Accessing Series elements using Positional Indexing
+-----------------------------------------------------------
+Indexing in Python starts from 0. It means if Series contains N elements then,
+
+1st element has index position 0
+2nd element has index position 1
+3rd element has index position 2
+…..
+…..
+Nth element has index position N-1
+-------------------------------------
+=>To access elements in Series by the index position, pass the index position in the subscript operator with the Series object. It will return the value at that index position. 
+Let’s see some examples,
+------------------------------------
+import pandas as pd
+# Create a Series object from a list
+names = pd.Series(  ['Mark', 'Rita', 'Vicki', 'Justin', 'John', 'Michal'],
+                    index = ['a', 'b', 'c', 'd', 'e', 'f'])
+print(names)
+# Access first element of the Series object
+first_element = names[0]
+print('First Element: ', first_element)
+# Access 3rd element of the Series object
+third_element = names[2]
+print('Third Element: ', third_element)
+Output
+
+a      Mark
+b      Rita
+c     Vicki
+d    Justin
+e      John
+f    Michal
+dtype: object
+First Element:  Mark
+Third Element:  Vicki
+=>Here, to access the first element we used the index position 0 and it returned the value ‘Mark’. To access the third value we used the index position 2, and it returned the value ‘Vicki’.
+=>If the index position provided doesn’t exist in the Series, then it will raise a IndexError. 
+For example,
+import pandas as pd
+# Create a Series object from a list
+names = pd.Series(  ['Mark', 'Rita', 'Vicki', 'Justin', 'John', 'Michal'],
+                    index = ['a', 'b', 'c', 'd', 'e', 'f'])
+print(names)
+# Access element at index position 10
+print( names[10] )
+Error:
+
+IndexError: index 10 is out of bounds for axis 0 with size 6
+It raises the IndexError because index position 10 does not exist. There are only six elements in the Series object, and the maximum index position for this Series object can be 5 only.
+------------------------------------------------
+Access Series elements using Label names
+------------------------------------------------
+=>Series is a labeled one-dimensional array, and each value in the Series has a label value associated with it. To access elements in Series by the label name, pass the label name in the subscript operator of the Series object. It will return the value associated with the label. 
+Let’s see some examples,
+
+import pandas as pd
+# Create a Series object from a list
+names = pd.Series(  ['Mark', 'Rita', 'Vicki', 'Justin', 'John', 'Michal'],
+                    index = ['a', 'b', 'c', 'd', 'e', 'f'])
+print('Element with label "d" is : ')
+# Access element with label 'd'
+print( names['d'] )
+Output:
+--------
+Element with label "d" is : Justin
+It returned the value associated with label ‘d’, that is ‘Justin’. If the label provided doesn’t exist in the Series, then it will raise a KeyError. For example,
+
+import pandas as pd
+# Create a Series object from a list
+names = pd.Series(  ['Mark', 'Rita', 'Vicki', 'Justin', 'John', 'Michal'],
+                    index = ['a', 'b', 'c', 'd', 'e', 'f'])
+# Access element with label 'k'
+print( names['k'] )
+Error:
+raise KeyError(key) from err
+KeyError: 'k'
+It raise the KeyError because label ‘k’ does not exist in the Series object.
+-----------------------------------------------------------------------------
+Access subset of Series using Index / Label Range
+-----------------------------------------------------------------------------
+=>Using slicing, we can access a range of elements from the series object i.e.
+	seriesObject[start : end]
+
+=>It will given an access to Series elements from index position start to end-1. For example,
+
+import pandas as pd
+# Create a Series object from a list
+names = pd.Series(  ['Mark', 'Rita', 'Vicki', 'Justin', 'John', 'Michal'],
+                    index = ['a', 'b', 'c', 'd', 'e', 'f'])
+print(names)
+# Select elements from index position 1 till 3
+few_names = names[1:4]
+# Display the subset of Series
+print(few_names)
+----------------
+=>Here, we fetched only three elements from the Series object from i.e from index position 1 till index position 3.
+=>Similarly we can provide the label range instead of index range.
+---------------
+For example,
+
+import pandas as pd
+# Create a Series object from a list
+names = pd.Series(  ['Mark', 'Rita', 'Vicki', 'Justin', 'John', 'Michal'],
+                    index = ['a', 'b', 'c', 'd', 'e', 'f'])
+print(names)
+# Select elements from index label 'b' till label 'e'
+few_names = names['b' : 'e']
+# Display the subset of Series
+print(few_names)
+Output:
+
+a      Mark
+b      Rita
+c     Vicki
+d    Justin
+e      John
+f    Michal
+dtype: object
+b      Rita
+c     Vicki
+d    Justin
+e      John
+dtype: object
+It selected the values from label ‘a’ till label ‘e’. Notice the while providing index label range, then end label is also included, whereas in index position range items till end-1 was included.
+---------------------------------------------------------------
+Access multiple elements of Series by specific index positions
+----------------------------------------------------------------
+We can also pass a list of index positions in the subscript operator of the Series object. It will return a Series object containing the specified elements only.
+
+import pandas as pd
+# Create a Series object from a list
+names = pd.Series(  ['Mark', 'Rita', 'Vicki', 'Justin', 'John', 'Michal'],
+                    index = ['a', 'b', 'c', 'd', 'e', 'f'])
+print(names)
+# Select elements at index position 2, 3 and 0 only
+few_names = names[[2, 3, 0]]
+# Display the subset of Series
+print(few_names)
+Output
+
+a      Mark
+b      Rita
+c     Vicki
+d    Justin
+e      John
+f    Michal
+dtype: object
+c     Vicki
+d    Justin
+a      Mark
+dtype: object
+It selected the values at index position 2, 3 and 0 only.
+
+Access multiple elements of Series by specific label names
+We can also pass a list of label names in the subscript operator of the Series object. It will return a Series object containing the specified elements only.
+
+import pandas as pd
+# Create a Series object from a list
+names = pd.Series(  ['Mark', 'Rita', 'Vicki', 'Justin', 'John', 'Michal'],
+                    index = ['a', 'b', 'c', 'd', 'e', 'f'])
+print(names)
+# Select elements at index labels 'd', 'e' and 'a'
+few_names = names[['d', 'e', 'a']]
+# Display the subset of Series
+print(few_names)
+Output
+
+a      Mark
+b      Rita
+c     Vicki
+d    Justin
+e      John
+f    Michal
+dtype: object
+d    Justin
+e      John
+a      Mark
+dtype: object
+It selected the values with label ‘d’, ‘e’ and ‘a’.
+==================================================================================================
+Changing elements in the Series
+=================================================================================================
+=>When we access Series elements using the subscript operator, then can directly use that to change the content of the Series object. 
+=>Let’s understand this with some examples,
+=>Suppose we have a Series object,
+
+import pandas as pd
+# Create a Series object from a list
+names = pd.Series(  ['Mark', 'Rita', 'Vicki', 'Justin', 'John', 'Michal'],
+                    index = ['a', 'b', 'c', 'd', 'e', 'f'])
+print(names)
+Output
+
+a      Mark
+b      Rita
+c     Vicki
+d    Justin
+e      John
+f    Michal
+dtype: object
+Change single element in Series by index position
+Access the element at specified index position using subscript operator and directly assign new value to it. For example,
+
+# Change the 3rd value of Series
+names[2] = 'Sanjay'
+# Display the Series
+print(names)
+Output
+
+a      Mark
+b      Rita
+c    Sanjay
+d    Justin
+e      John
+f    Michal
+dtype: object
+It changed the third value of Series to ‘Sanjay’.
+-----------------------------------------------------
+Change single element in Series by label value
+-----------------------------------------------------
+Access the element by specifying the label name using subscript operator and directly assign new value to it. For example,
+
+# Change the value at label 'e'
+names['e'] = 'Harsha'
+# Display the Series
+print(names)
+Output
+
+a      Mark
+b      Rita
+c    Sanjay
+d    Justin
+e    Harsha
+f    Michal
+dtype: object
+It changed the value at label “e” to ‘Harsha’.
+---------------------------------------------------------------------
+Change multiple elements in Series
+---------------------------------------------------------------------
+Access multiple elements using index range or label range using subscript operator and directly assign new values to it. For examples,
+
+# Change the first three values to same value
+names[0 : 3] = 'John Doe'
+# Display the Series
+print(names)
+Output
+
+a    John Doe
+b    John Doe
+c    John Doe
+d      Justin
+e      Harsha
+f      Michal
+dtype: object
+It changed the first three values. All the values from index position 0 till 2 was set to same value.
+
+Example 2:
+
+# Change the values from label 'a' till 'd' to same value
+names['a' : 'd'] = 'Smriti'
+# Display the Series
+print(names)
+Output
+
+a    Smriti
+b    Smriti
+c    Smriti
+d    Smriti
+e    Harsha
+f    Michal
+dtype: object
+It changed the values from label ‘a’ till ‘e’ in the Series to the same value.
+===========================================x============================================

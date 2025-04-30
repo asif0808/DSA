@@ -1,0 +1,177 @@
+		===========================================================
+				Implementing  Pie Charts
+		===========================================================
+=>To draw pie chart, we use pie() 
+		plt.pie(Values)
+------------------------------------
+Examples
+------------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+y = np.array([35, 25, 25, 15])
+plt.pie(y)
+plt.show()
+-------------------------------------
+=>The pie chart draws one piece (called a wedge) for each value in the array (in this case [35, 25, 25, 15]).
+=>By default the plotting of the first wedge starts from the x-axis and moves counterclockwise direction
+=>Note that The size of each wedge is determined by comparing the value with all the other values, by using this formula:
+		The value divided by the sum of all values: (x/sum(x))*100
+------------------------------------------------------------
+Adding Labels to wedges
+------------------------------------------------------------
+=>Add labels to the pie chart with the labels parameter.
+=>The labels parameter must be an array with one label for each wedge
+=>Syntax:   		labelstowedges=["Label1","Label2",..."Label-n"]
+			plt.pie(Values,labels=labelstowedges)
+Note That Number of Labels must be equal to Number of Values.
+-----------------	
+Examples
+----------------
+import matplotlib.pyplot as plt
+import numpy as np
+y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+plt.pie(y, labels = mylabels)
+plt.show() 
+---------------------------------------------------------
+Start Angle
+---------------------------------------------------------
+=>The default start angle is at the x-axis, but you can change the start angle by specifying a startangle parameter.
+=>The startangle parameter is defined with an angle in degrees, default angle is 0:
+=>Syntyax:    plt.pie(Values,labels,startangle)
+Here startangle can be 0(default) or  90 or 180 or 270 or 360.
+--------------
+Example
+--------------
+Start the first wedge at 90 degrees:
+
+import matplotlib.pyplot as plt
+import numpy as np
+y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+plt.pie(y, labels = mylabels, startangle = 90)
+plt.show() 
+------------------------------------------------------------------------------------------------------------------------
+Explode
+------------------------------------------------------------------------------------------------------------------------
+=>May be we want one of the wedges to stand out from pie chart. The explode parameter allows us to do that.
+=>The explode parameter, if specified, and not None, must be an array with one value for each wedge.
+=>Each value represents how far from the center each wedge is displayed:
+=>Syntax:   plt.pie(Values,labels,startangle,explode)
+here explode attribute must contain explode value 
+----------------
+Example
+----------------
+Pull the "Apples" wedge 0.2 from the center of the pie:
+
+import matplotlib.pyplot as plt
+import numpy as np
+y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+myexplode = [0.2, 0, 0, 0]
+plt.pie(y, labels = mylabels, explode = myexplode)
+plt.show() 
+-----------------------------------------------------------------------------------------------------------------------
+Shadow
+----------------------------------------------------------------------------------------------------------------------
+=>Add a shadow to the pie chart by setting the shadows parameter to True:
+=>Syntax:   plt.pie(Values,labels,startangle,explode,shadow)
+=>here shadow can take True or False(default)
+----------------
+Example
+----------------
+Add a shadow:
+import matplotlib.pyplot as plt
+import numpy as np
+y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+myexplode = [0.2, 0, 0, 0]
+plt.pie(y, labels = mylabels, explode = myexplode, shadow = True)
+plt.show() 
+----------------------------------------------------------------------------------------------------------------------
+Colors
+----------------------------------------------------------------------------------------------------------------------
+=>We can set the color of each wedge with the colors parameter.
+=>The colors parameter, if specified, must be an array with one value for each wedge:
+=>Syntax:  plt.pie(Values,labels,startangle,explode,shadow,colors=list of colors )
+=>Some of the values for color
+'r' - Red
+'g' - Green
+'b' - Blue
+'c' - Cyan
+'m' - Magenta
+'y' - Yellow
+'k' - Black
+'w' - White
+
+---------------------
+Example
+---------------------
+Specify a new color for each wedge:
+
+import matplotlib.pyplot as plt
+import numpy as np
+y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+mycolors = ["black", "hotpink", "b", "red"]
+plt.pie(y, labels = mylabels, colors = mycolors)
+plt.show() 
+-------------------------------------------------------------------------------------------------------------------------
+Legend
+-------------------------------------------------------------------------------------------------------------------------
+To add a list of explanation for each wedge, use the legend() function:
+=>Syntax:    plt.pie(Values,labels,startangle,explode,shadow,colors=list of colors )
+					plt.legend()
+-----------------
+Example
+----------------
+Add a legend:
+------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+plt.pie(y, labels = mylabels)
+plt.legend()
+plt.show() 
+-------------------------------------------------------------------------------------------------------------------------
+Legend With Header
+-------------------------------------------------------------------------------------------------------------------------
+To add a header to the legend, add the title parameter to the legend function.
+  plt.pie(Values,labels,startangle,explode,shadow,colors=list of colors )
+					plt.legend(title="Title")
+----------------
+Example
+---------------
+Add a legend with a header:
+-----------------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+
+y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+
+plt.pie(y, labels = mylabels)
+plt.legend(title = "Four Fruits:")
+plt.show() 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Examples
+---------------------------------------
+from matplotlib import pyplot as plt
+plt.title("Games View",color="green",fontweight="bold",fontsize=20)
+sports=[10,5,5,10,10]
+spnames=["FootBall","Hockey","Cricket","Basketball","Badminton"]
+cols=["gold","green","hotpink","cyan","blue"]
+plt.pie(sports,labels=spnames,explode=[0.1,0,0,0,0],colors=cols,startangle=90,autopct='%0.0f%%',
+        wedgeprops={'linewidth':4,'edgecolor':"red"})
+plt.show()
+=========================================X======================================================
+from matplotlib import pyplot as plt
+plt.title("Expenditure",color="green",fontweight="bold",fontsize=20)
+exprs=[4000,5400,2800,1400]
+expnames=["Rent","Food","Clothing","Savings"]
+cols=['rosybrown', 'moccasin', 'lightyellow', 'darkseagreen']
+plt.pie(exprs,labels=expnames,explode=[0.1,0,0,0],colors=cols,autopct='%0.0f%%',
+        wedgeprops={'linewidth':4,'edgecolor':"red"})
+plt.show()
+=========================================x====================================================

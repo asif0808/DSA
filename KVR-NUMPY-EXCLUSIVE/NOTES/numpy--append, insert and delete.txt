@@ -1,0 +1,166 @@
+		====================================
+			numpy-----append() 
+		====================================
+Numpy module in python, provides a function to numpy.append() to add an element in a numpy array. 
+Syntax: Varname=numpy.append( ndarrayobj, value)
+         Example.         	
+	import numpy as np
+	#Create a Numpy Array of integers
+	arr = np.array([11, 2, 6, 7, 2])
+	# Add / Append an element at the end of a numpy array
+	new_arr = np.append(arr, 10)
+	print('New Array: ', new_arr)
+	print('Original Array: ', arr)
+======================================
+		numpy---insert()
+======================================
+Numpy module in python, provides a function numpy.insert() to insert the element  in ndarray at particular Index.
+Syntax:  varname=np.insert( (ndarray , index, value)
+         Example.         	
+	 import numpy as np
+	 a=np.array([10,20,30,40]) 
+	 a=np.array([10,20,30,40])
+	 b=np.insert(a,1,35)
+	 print(a)# array([10, 35, 20, 30, 40])
+
+====================================
+np.delete()
+====================================
+Python’s Numpy library provides a method to delete elements from a numpy array based on index position i.e.
+
+		numpy.delete(ndarrayobj, index(es), axis=None)
+---------------------------------------------------------------
+ndarrayobj : Is an object of ndarray class
+index(es):    Represents eithetr single Index position or list of index positions of 
+                    items to be deleted from ndarrayobject.
+axis : Axis along which we want to delete.
+	  If 1 then delete columns.
+	  If 0 then delete rows.
+
+Examples:
+--------------------
+# Create a Numpy array from list of numbers
+arr = np.array([4,5,6,7,8,9,10,11])
+		Now let’s delete an element at index position 2 in the above created numpy array,
+# Delete element at index  2
+arr = np.delete(arr, 2)
+print('Modified Numpy Array by deleting element at index  2')
+print(arr)
+Output:----Modified Numpy Array by deleting element at index position 2
+			[ 4  5  7  8  9 10 11]
+----------------------------------------------------
+To delete multiple elements from a numpy array by indexes , pass the numpy array and list of indexes to be deleted to np.delete() i.e.
+
+# Create a Numpy array from list of numbers
+arr = np.array([4, 5, 6, 7, 8, 9, 10, 11])
+# Delete element at indexes 1,2 and 3
+arr = np.delete(arr, [1,2,3])
+print('Modified Numpy Array by deleting element at index position 1, 2 &amp; 3')
+print(arr)
+Output:---------Modified Numpy Array by deleting element at index position 1, 2 &amp; 3
+			[ 4  8  9 10 11]
+----------------------------------------------------------------------------------------
+Delete rows & columns from a 2D Numpy Array
+----------------------------------------------------------------------------------------
+Suppose we have a 2D numpy array i.e.
+
+# Create a 2D numpy array from list of list
+arr2D = np.array([[11 ,12, 13, 11],
+                  [21, 22, 23, 24],
+                  [31, 32, 33, 34]])
+print(arr2D)
+
+Output:
+--------------
+		[[11 12 13 11]
+		 [21 22 23 24]
+		 [31 32 33 34]]
+---------------------------------------------
+=>Now let’s see how to delete rows and columns from it based on index .
+
+=>Delete a column in 2D Numpy Array by column number
+=>To delete a column from a 2D numpy array using np.delete() we need to pass the axis=1   along with numpy array and index of column i.e.
+
+# Delete column at index 1
+arr2D = np.delete(arr2D, 1, axis=1)
+print('Modified 2D Numpy Array by removing columns at index 1')
+print(arr2D)
+Output:
+-------------------
+Modified 2D Numpy Array by removing columns at index 1
+	[[11 13 11]
+	 [21 23 24]
+	 [31 33 34]]
+=>It will delete the column at index  1 from the above created 2D numpy array.
+=>Delete multiple columns in 2D Numpy Array by column number
+=>Pass axis=1 and list of column numbers to be deleted along with numpy array to np.delete() i.e.
+
+# Create a 2D numpy array from list of list
+arr2D = np.array([[11 ,12, 13, 11],
+			  [21, 22, 23, 24],
+			  [31, 32, 33, 34]])
+# Delete column at index 2 and  3
+arr2D = np.delete(arr2D, [2,3], axis=1)
+print('Modified 2D Numpy Array by removing columns at index 2 &amp; 3')
+print(arr2D)
+Output:
+
+Modified 2D Numpy Array by removing columns at index 2 &amp; 3
+[[11 12]
+ [21 22]
+ [31 32]]
+It deleted the columns at index positions 2 and 3 from the above created 2D numpy array.
+----------------------------------------------------------------
+Delete a row in 2D Numpy Array by row number
+Our original 2D numpy array arr2D is,
+
+[[11 12 13 11]
+ [21 22 23 24]
+ [31 32 33 34]]
+To delete a row from a 2D numpy array using np.delete() we need to pass the axis=0 along with numpy array and index of row i.e. row number,
+--------------------------------------------------------------------
+# Delete row at index 0 i.e. first row
+arr2D = np.delete(arr2D, 0, axis=0)
+print('Modified 2D Numpy Array by removing rows at index 0')
+print(arr2D)
+Output:
+
+[[21 22 23 24]
+ [31 32 33 34]]
+It will delete the row at index position 0 from the above created 2D numpy array.
+
+Delete multiple rows in 2D Numpy Array by row number
+Our original 2D numpy array arr2D is,
+
+[[11 12 13 11]
+ [21 22 23 24]
+ [31 32 33 34]]
+Pass axis=0 and list of row numbers to be deleted along with numpy array to np.delete() i.e.
+
+# Delete rows at row 1 and  2
+arr2D = np.delete(arr2D, [1, 2], axis=0)
+print('Modified 2D Numpy Array by removing rows at index 1 and 2')
+print(arr2D)
+Output:
+
+Modified 2D Numpy Array by removing rows at index 1 and  2
+[[11 12 13 11]]
+It deleted the row at index position 1 and 2 from the above created 2D numpy array.
+-----------------------------------------------------------------------------------------------------------
+Delete specific elements in 2D Numpy Array by index position
+-----------------------------------------------------------------------------------------------------------
+Our original 2D numpy array arr2D is,
+
+[[11 12 13 11]
+ [21 22 23 24]
+ [31 32 33 34]]
+When we don’t pass axis argument to np.delete() then it’s default value is None, which means 2D numpy array will be flattened for deleting elements at given index position.  Let’s use np.delete() to delete element at row number 0 and column 2 from our 2D numpy array,
+
+# Delete element in row 0 and column 2 from 2D numpy array
+modArr = np.delete(arr2D, 2)
+print('Modified 2D Numpy Array by removing element at row 0  column 2')
+print(modArr)
+Output:
+Modified 2D Numpy Array by removing element at row 0  column 2
+[11 12 11 21 22 23 24 31 32 33 34]
+--------------------------------------------------------------------------------------------------------------------

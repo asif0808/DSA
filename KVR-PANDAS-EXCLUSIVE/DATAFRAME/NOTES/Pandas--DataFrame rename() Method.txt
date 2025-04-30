@@ -1,0 +1,57 @@
+	============================================================		
+		Pandas DataFrame rename() Method
+	============================================================
+ By using this method, we can alter or change the axes labels.
+
+The below shows the syntax of the DataFrame.rename() method.
+Syntax
+-----------
+DataFrame.rename(index=None, columns=None)
+-------------------------------------------------------------------------------------------
+Example 1: Alter the label of the DataFrame in Pandas
+Here, using the DataFrame.rename() method, we change the name of the column.
+We can also specify in which axis we are aletering using the axis parameter.
+
+#importing pandas as pd
+import pandas as pd
+#creating the DataFrame
+df = pd.DataFrame({"A": [1, 2, 3], "B": [4, 5, 6],"C": [7,8,9]})
+print("-------The DataFrame is-------")
+print(df)
+print("----------------------------------")
+print(df.rename(columns={"A": "a", "B": "b","C":"c"}))
+
+-------The DataFrame is-------
+A B C
+0 1 4 7
+1 2 5 8
+2 3 6 9
+----------------------------------
+a b c
+0 1 4 7
+1 2 5 8
+2 3 6 9
+
+Example: Alter the label using the DataFrame.rename() Method
+Here, using the DataFrame.rename() method, we change the name of the index. See the below example.
+
+#importing pandas as pd
+import pandas as pd
+#creating the DataFrame
+df = pd.DataFrame({"A": [1, 2, 3], "B": [4, 5, 6],"C": [7,8,9]})
+print("-------The DataFrame is-------")
+print(df)
+print("----------------------------------")
+print(df.rename(index={0: "index_1", 1: "index_2", 2:"index_3"}))
+
+-------The DataFrame is-------
+   A B C
+0 1 4 7
+1 2 5 8
+2 3 6 9
+----------------------------------
+              A B C
+index_1 1 4 7
+index_2 2 5 8
+index_3 3 6 9
+--------------------------------------------------------

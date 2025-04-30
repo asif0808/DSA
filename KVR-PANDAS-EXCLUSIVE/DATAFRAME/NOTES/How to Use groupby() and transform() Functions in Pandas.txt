@@ -1,0 +1,86 @@
+	======================================================================
+		How to Use groupby() and transform() Functions in Pandas
+	======================================================================
+Method 1: Use groupby() and transform() with built-in function
+--------------
+df['new'] = df.groupby('group_var')['value_var'].transform('mean')
+
+Method 2: Use groupby() and transform() with custom function
+---------
+df['new'] = df.groupby('group_var')['value_var'].transform(lambda x: some function)
+The following examples show how to use each method in practice with the following pandas DataFrame:
+
+import pandas as pd
+
+#create DataFrame
+df = pd.DataFrame({'team': ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B'],
+                   'points': [30, 22, 19, 14, 14, 11, 20, 28]})
+
+#view DataFrame
+print(df)
+---------------------------------
+  team  points
+0    A      30
+1    A      22
+2    A      19
+3    A      14
+4    B      14
+5    B      11
+6    B      20
+7    B      28
+----------------------------------
+Example 1: Use groupby() and transform() with built-in function
+-------------------------------------------------------------------------------------------------
+The following code shows how to use the groupby() and transform() functions to add a new column to the DataFrame called mean_points:
+
+#create new column called mean_points
+df['mean_points'] = df.groupby('team')['points'].transform('mean')
+
+#view updated DataFrame
+print(df)
+
+  team  points  mean_points
+0    A      30        21.25
+1    A      22        21.25
+2    A      19        21.25
+3    A      14        21.25
+4    B      14        18.25
+5    B      11        18.25
+6    B      20        18.25
+7    B      28        18.25
+-----------------------------------------------------------
+#create new column called sum_points
+df['sum_points'] = df.groupby('team')['points'].transform('sum')
+
+#view updated DataFrame
+print(df)
+
+  team  points  sum_points
+0    A      30          85
+1    A      22          85
+2    A      19          85
+3    A      14          85
+4    B      14          73
+5    B      11          73
+6    B      20          73
+7    B      28          73
+--------------------------------------------------------------------
+Example 2: Use groupby() and transform() with custom function
+The following code shows how to use the groupby() and transform() functions to create a custom function that calculates the percentage of total points scored by each player on their respective teams:
+
+#create new column called percent_of_points
+df['percent_of_points'] = df.groupby('team')['points'].transform(lambda x: x/x.sum())
+
+#view updated DataFrame
+print(df)
+--------------------------------------------------------
+  team  points  percent_of_points
+0    A      30           0.352941
+1    A      22           0.258824
+2    A      19           0.223529
+3    A      14           0.164706
+4    B      14           0.191781
+5    B      11           0.150685
+6    B      20           0.273973
+7    B      28           0.383562
+----------------------------------------------------------------------------------

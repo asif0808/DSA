@@ -1,0 +1,187 @@
+		===============================================================
+						Matplotlib--Line Plot 
+		===============================================================
+------------------------------------------------------------------------
+ Introduction to Line Plots
+------------------------------------------------------------------------
+=>A line plot visualizes information as a series of data points called markers connected by straight line segments. These are also used to express trends in data over intervals of time. Line Plots display a numerical variable on one axis and a categorical variable on the other.
+=>Let’s take an example to understand how to work with line plots. Suppose you’ve been given the maximum recorded temperature around your city for the last three weeks:
+
+Days	Week 1	Week 2	Week 3
+Monday		27°		29°		29°
+Tuesday		29°		30°		28°
+Wednesday	32°		31°		25°
+Thursday		33°		33°		27°
+Friday		33°		34°		31°
+Saturday		31°		34°		30°
+Sunday		29°		31°		29°
+-----------------------------------------------------------------------------------------------------------------------------------------------
+data = {'Days': ['Monday','Tuesday','Wednesday','Thursday','Friday', 'Saturday', 'Sunday'], 
+        'Week 1': [27,29,32,33,33,31,29],
+        'Week 2': [29,30,31,33,34,34,31],
+        'Week 3': [29,28,25,27,31,30,29]}
+ 
+df = pd.DataFrame(data)
+print(df)
+--------------------------------------------------
+Plotting the data
+---------------------------------------------------
+	To plot a line chart, we use the  plot() function:
+Plotting for Week 1
+plt.plot(df['Days'], df['Week 1'])
+---------------------------------------------------
+Let’s add a few elements here to help us interpret the visualization better. 
+-----------------------------------------------------
+Adding Elements to the Line Plot
+-----------------------------------------------------
+The plot we have created would not be easily understandable to a third pair of eyes without context, so let’s try to add different elements to make it more readable:
+Use plt.title() for setting a plot title
+Use plt.xlabel() and plt.ylabel() for labeling x and y-axis respectively
+Use plt.legend() for the observation variables
+Use plt.show() for displaying the plot
+---------------------------------------------------------------------------
+plt.plot(df['Days'], df['Week 1'])
+plt.xlabel('Days')
+plt.ylabel('Temperature')
+plt.title('Line Plot of Week 1 Temperatures')
+plt.show()
+--------------------------------------------------------------------------
+Through the above plot, we can say that the temperatures were the highest during mid-week.
+Parameters of the Line Plot
+Let’s plot for all three weeks within the same axis first:
+ 
+week1 = plt.plot(df['Days'], df['Week 1'])
+week2 = plt.plot(df['Days'], df['Week 2'])
+week3 = plt.plot(df['Days'], df['Week 3'])
+plt.xlabel('Days')
+plt.ylabel('Temperature')
+plt.title('Line Plot of Week 1 Temperatures')
+plt.legend(['Week 1','Week 2','Week 3'])
+plt.show()
+----------------------------------------------------------------------------
+Through the above plot, we can say that the temperatures have dipped during the third week, being particularly low on the Wednesday of week 3.
+
+Note: To plot multiple line charts separate axis, just add plt.show() after each plt.plot() function.
+
+Use parameter color or c to specify the line colors:
+ -------------------------------------------------------------------------------------------
+ week1 = plt.plot(df['Days'], df['Week 1'], c='y')
+week2 = plt.plot(df['Days'], df['Week 2'], c='g')
+week3 = plt.plot(df['Days'], df['Week 3'], c='b')
+plt.xlabel('Days')
+plt.ylabel('Temperature')
+plt.title('Line Plot of Temperatures for 3 Weeks')
+plt.legend(['Week 1','Week 2','Week 3'])
+plt.show()
+----------------------------------------------------------------------------------
+Use parameter linestyle or ls to specify line styles:
+----------------------------------------------------------------------------------
+week1 = plt.plot(df['Days'], df['Week 1'], c='y', ls='-.')
+week2 = plt.plot(df['Days'], df['Week 2'], c='g', ls='dashed')
+week3 = plt.plot(df['Days'], df['Week 3'], c='b')
+plt.xlabel('Days')
+plt.ylabel('Temperature')
+plt.title('Line Plot of Temperatures for 3 Weeks')
+plt.legend(['Week 1','Week 2','Week 3'])
+plt.show()
+------------------------------------------------------------------------------------------
+Use parameter linewidth or lw to highlight one line in the chart:
+------------------------------------------------------------------------------------------
+week1 = plt.plot(df['Days'], df['Week 1'], c='y', ls='-.')
+week2 = plt.plot(df['Days'], df['Week 2'], c='g', ls='dashed')
+week3 = plt.plot(df['Days'], df['Week 3'], c='b', lw=3)
+plt.xlabel('Days')
+plt.ylabel('Temperature')
+plt.title('Line Plot of Temperatures for 3 Weeks')
+plt.legend(['Week 1','Week 2','Week 3'])
+plt.show()
+------------------------------------------------------------------------------------------
+Use alpha parameter to specify the transparency of a line. It takes a scalar value between 0 and 1:
+week1 = plt.plot(df['Days'], df['Week 1'], c='y', ls='-.')
+week2 = plt.plot(df['Days'], df['Week 2'], c='g', ls='dashed')
+week3 = plt.plot(df['Days'], df['Week 3'], c='b', lw=3)
+plt.xlabel('Days')
+plt.ylabel('Temperature')
+plt.title('Line Plot of Temperatures for 3 Weeks')
+plt.legend(['Week 1','Week 2','Week 3'])
+plt.show()
+------------------------------------------------------------------------------------
+Use parameter marker or to specify marker style string:
+(‘o’, ‘v’, ‘^’, ‘<‘, ‘>’, ‘8’, ‘s’, ‘p’, ‘*’, ‘h’, ‘H’, ‘D’, ‘d’, ‘P’, ‘X’)
+week1 = plt.plot(df['Days'], df['Week 1'], c='y', ls='-.', marker='o')
+week2 = plt.plot(df['Days'], df['Week 2'], c='g', ls='dashed')
+week3 = plt.plot(df['Days'], df['Week 3'], c='b', marker='X')
+plt.xlabel('Days')
+plt.ylabel('Temperature')
+plt.title('Line Plot of Temperatures for 3 Weeks')
+plt.legend(['Week 1','Week 2','Week 3'])
+plt.show()
+----------------------------------------------------------------------------------------
+Use mfc parameter to highlight the markers with the specified color
+Use mec parameter to highlight the marker edges with the specified color
+Use ms parameter to specify the marker size
+ 
+week1 = plt.plot(df['Days'], df['Week 1'], c='y', ls='-.', marker='o', mfc='black')
+week2 = plt.plot(df['Days'], df['Week 2'], c='g', ls='dashed')
+week3 = plt.plot(df['Days'], df['Week 3'], c='b', marker='X', mec='r', ms=13)
+plt.xlabel('Days')
+plt.ylabel('Temperature')
+plt.title('Line Plot of Temperatures for 3 Weeks')
+plt.legend(['Week 1','Week 2','Week 3'])
+plt.show()
+-----------------------------------------------------------------------------------------
+Saving your Line Plot
+-----------------------------------------------------------------------------------------
+You can save your plot as an image using the savefig() function. 
+Plots can be saved in – .png, .jpeg, .pdf, and many other supporting formats. 
+
+Let’s try saving the ‘Line Plot of Temperatures for 3 Weeks’’ plot we have created above:
+ 
+fig = plt.figure(figsize=(20,10))
+week1 = plt.plot(df['Days'], df['Week 1'], c='y', ls='-.', marker='o', mfc='black')
+week2 = plt.plot(df['Days'], df['Week 2'], c='g', ls='dashed')
+week3 = plt.plot(df['Days'], df['Week 3'], c='b', marker='X', mec='r', ms=13)
+plt.xlabel('Days')
+plt.ylabel('Temperature')
+plt.title('Line Plot of Temperatures for 3 Weeks')
+plt.legend(['Week 1','Week 2','Week 3'])
+fig.savefig('lineplot.png')
+---------------------------------------------------------------------------------------------------------------------------
+The image would have been saved with the filename ‘lineplot.png’. 
+
+To view the saved image, we’ll use the matplotlib.image module, as shown below:
+#Displaying the saved image
+import matplotlib.image as mpimg
+ 
+image = mpimg.imread("lineplot.png")
+plt.imshow(image)
+plt.show()
+------------------------------------------------------------------------------------------------------------------------
+Endnotes
+The line plot is often viewed as a time series graph and is one of the most popular graphs in quantitative univariate analysis. Matplotlib is one of the Python visualization libraries and provides a wide variety of charts and plots for better analysis. 
+==============================================================================================
+Case: Comparison of Product Sales for 12 Months
+-----------------------------------------------------------------------------------
+Imagine you work at a retail company, and you want to evaluate the monthly sales of two different products over the past year.
+
+Let’s start by creating synthetic data for this scenario.
+
+#create synthetic data for product sales
+
+month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+product_sales_A = np.random.randint(50,200, 12) * 100
+product_sales_B = np.random.randint(50,200, 12) * 100
+
+df_sales = pd.DataFrame ({ 'month' : month,
+						'Product A': product_sales_A,
+						'Product B': product_sales_B })
+print(df_sales)
+#make a line plot for monthly sales of both products
+plt.figure(figsize=(14,7))
+plt.plot(df_sales['month'], df_sales['Product A'], color ='blue', marker='o', label='Product A')
+plt.plot(df_sales['month'], df_sales['Product B'], color ='red', marker='s',linestyle='--', label='Product B')
+plt.title('Comparison of Monthly Sales of Product A and Product B')
+plt.xlabel('month')
+plt.ylabel('sales')
+plt.legend()
+plt.show()

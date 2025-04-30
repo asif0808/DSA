@@ -1,0 +1,90 @@
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+#Example-1--to draw the bar graph we use bar(x,y)
+x=["Apples","Kiwi","Sbrerry","Mango"]
+y=[40,20,35,23]
+plt.bar(x,y)
+plt.show()
+-------------------------------------------------
+
+#Example-1--to draw the bar graph we use bar(x,y)
+x=["Apples","Kiwi","Sbrerry","Mango"]
+y=[40,20,35,23]
+plt.bar(x,y,color="darkblue")
+plt.show()
+-------------------------------------------------
+
+#Example-1--to draw the bar graph we use bar(x,y)
+x=["Apples","Kiwi","Sbrerry","Mango"]
+y=[40,20,35,23]
+colors=["red","brown","hotpink","yellow"]
+plt.bar(x,y,color=colors)
+plt.show()
+-------------------------------------------------
+
+
+#Example-1--to draw the bar graph we use bar(x,y)
+x=["Apples","Kiwi","Sbrerry","Mango"]
+y=[40,20,35,23]
+colors=["red","brown","hotpink","yellow"]
+plt.bar(x,y,color=colors,width=0.5)
+plt.show()
+-------------------------------------------------
+
+
+#Example-1--to draw the bar graph we use bar(x,y)
+x=["Apples","Kiwi","Sbrerry","Mango"]
+y=[40,20,35,23]
+colors=["red","brown","hotpink","yellow"]
+lables=["Apples","Kiwis","Sberries","Mangoes"]
+plt.bar(x,y,color=colors,width=0.5,label=lables)
+plt.legend()
+plt.xlabel("Fruits Types")
+plt.ylabel("Number Units Sold-out")
+plt.title("Fruit Selling Analysis")
+plt.show()
+-------------------------------------------------
+
+
+#Example-1--to draw the bar graph we use barh(x,y)
+x=["Apples","Kiwi","Sbrerry","Mango"]
+y=[40,20,35,23]
+plt.barh(x,y)
+plt.show()
+-------------------------------------------------
+
+
+#Example-1--to draw the bar graph we use barh(x,y)
+x=["Apples","Kiwi","Sbrerry","Mango"]
+y=[40,20,35,23]
+plt.barh(x,y,color="hotpink")
+plt.show()
+-------------------------------------------------
+
+
+#Example-1--to draw the bar graph we use barh(x,y)
+x=["Apples","Kiwi","Sbrerry","Mango"]
+y=[40,20,35,23]
+plt.barh(x,y,color="hotpink",height=0.5)
+plt.show()
+-------------------------------------------------
+
+
+#Example-1--to draw the bar graph we use barh(x,y)
+x=["Apples","Kiwi","Sbrerry","Mango"]
+y=[40,20,35,23]
+plt.barh(x,y,color=["red","brown","hotpink","yellow"],height=0.5)
+plt.show()
+-------------------------------------------------
+
+
+#Example-1--to draw the bar graph we use barh(x,y)
+x=["Apples","Kiwi","Sbrerry","Mango"]
+y=[40,20,35,23]
+plt.barh(x,y,color=["red","brown","hotpink","yellow"],label=["Apples","Kiwis","Sberries","Mangoes"],height=0.5)
+plt.legend()
+plt.show()
+-------------------------------------------------
+

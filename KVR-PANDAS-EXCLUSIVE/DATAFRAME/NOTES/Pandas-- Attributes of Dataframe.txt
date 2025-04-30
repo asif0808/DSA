@@ -1,0 +1,496 @@
+		======================================
+			Dataframe Attributes in Python Pandas
+		======================================
+=>Attributes are the properties of a DataFrame that can be used to fetch data or any information related to a particular dataframe.
+-------------------------------------
+The syntax of writing an attribute is: DataFrame_name.attribute
+------------------------------------------
+These are the attributes of the dataframe:
+--------------------------------------------
+1.index
+2.columns
+3.axes
+4.dtypes
+5.size
+6.shape
+7.ndim
+8.empty
+9.T
+10.values
+==============================================
+1.index
+==============================================
+There are two types of index in a DataFrame one is the row index and the other is the column index. The index attribute is used to display the row labels of a data frame object. The row labels can be of 0,1,2,3,… form and can be of names. 
+
+Syntax: dataframe_name.index
+
+Example 1: When the index is not mentioned in a DataFrame                                                                                                            
+# Python program to implement
+# index attribute in a dataframe object
+import pandas as pd
+ 
+# creating a 2D dictionary
+dict = {"Student": ["Arvind", "Aryan",
+                    "Travis", "Rossum"],
+        "Marks": [85, 92, 78, 83],
+        "Sports": ["Cricket", "Volleyball", 
+                   "Hockey", "Badminton"]}
+ 
+# creating a DataFrame
+df = pd.DataFrame(dict)
+ 
+# printing this DataFrame on the 
+# output screen
+print(df)
+ 
+# Implementing index attribute on
+# this DataFrame
+print(df.index)
+------------------
+Output:
+----------
+=====================================
+  Student  Marks      Sports
+0  Arvind     85     Cricket
+1   Aryan     92  Volleyball
+2  Travis     78      Hockey
+3  Rossum     83   Badminton
+=====================================
+RangeIndex(start=0, stop=4, step=1)
+
+In this program, we have made a DataFrame from a 2D dictionary and then printed this DataFrame on the output screen and at the end of the program, we have implemented an index attribute (df.index) to print the index labels of this DataFrame. As we have not mentioned any index labels in this program, it will automatically take the index from 0 to n numbers where n is the number of rows and then printed on the output screen.
+
+Example 2: When the index is mentioned in a DataFrame
+ 
+# Python program to implement
+# index attribute in a dataframe object
+import pandas as pd
+ 
+# creating a 2D dictionary
+dict = {"Student": ["Arvind", "Aryan",
+                    "Travis", "Rossum"],
+        "Marks": [85, 92, 78, 83],
+        "Sports": ["Cricket", "Volleyball", 
+                   "Hockey", "Badminton"]}
+ 
+# creating a DataFrame
+df = pd.DataFrame(dict, index=['I', 'II', 'III', 'IV'])
+ 
+# printing this DataFrame on the 
+# output screen
+print(df)
+ 
+# Implementing index attribute on
+# this DataFrame
+print(df.index)
+Output:
+--------------
+=====================================
+    Student  Marks      Sports
+I    Arvind     85     Cricket
+II    Aryan     92  Volleyball
+III  Travis     78      Hockey
+IV   Rossum     83   Badminton
+=====================================
+Index(['I', 'II', 'III', 'IV'], dtype='object')
+
+In this program, we have made a DataFrame from a 2D dictionary and then print this DataFrame on the output screen and at the end of the program, we have implemented index attribute (df.index) to print the index labels of this DataFrame, as we have mentioned index labels in this program as I, II, III and IV, so it will print the same on the output screen.
+------------------
+2.columns
+-------------------
+=>This attribute is used to fetch the label values for columns present in a particular data frame.
+=>Syntax: dataframe_name.columns 
+
+ 
+# Python program to implement
+# columns attribute in a dataframe object
+import pandas as pd
+ 
+# Creating a 2D dictionary having values as
+# dictionary object
+dict = {"Sales": {'Name': 'Rossum', 'Age': 67, 'Gender': 'Male'},
+        "Marketing": {'Name': 'Rossy',  'Age': 65, 'Gender': 'Female'}}
+ 
+# Creating a data frame object
+data_frame = pd.DataFrame(dict)
+ 
+# printing this data frame on output screen
+print(data_frame)
+ 
+# Implementing index attribute for this
+# data frame
+print(data_frame.columns)
+print("Number of Columns=",len(data_frame.columns))
+Output:
+=====================================
+         Sales Marketing
+Name    Rossum     Rossy
+Age         67        65
+Gender    Male    Female
+=====================================
+Index(['Sales', 'Marketing'], dtype='object')
+=====================================
+Number of Clumns= 2
+
+In this program, we have made a DataFrame from a 2D dictionary having values as dictionary object and then printed this DataFrame on the output screen and at the end of the program, we have implemented column attribute as print(data_frame.columns) to print the column labels of this DataFrame. In this program, column labels are “Marketing and Sales” so it will print the same.
+----------------------------
+3.axes
+-----------------------------
+This attribute is used when we want to fetch the values of all row labels and all column labels at a time.
+
+Syntax: dataframe_name.axes
+
+ 
+# Python program to implement
+# axes attribute in a dataframe object
+import pandas as pd
+# Creating a 2D dictionary having values as
+# dictionary object
+dict = {"Sales": {'Name': 'Rossum', 'Age': 67, 'Gender': 'Male'},
+        "Marketing": {'Name': 'Rosy', 'Age': 65,   'Gender': 'Female'}}
+ 
+# Creating a data frame object
+data_frame = pd.DataFrame(dict)
+ 
+# printing this data frame on output screen
+print(data_frame)
+ 
+# Implementing axes attribute for this data frame
+print(data_frame.axes)
+Output:
+------------
+=====================================
+         Sales Marketing
+Name    Rossum      Rosy
+Age         67        65
+Gender    Male    Female
+=====================================
+[Index(['Name', 'Age', 'Gender'], dtype='object'), Index(['Sales', 'Marketing'], dtype='object')]
+=====================================
+In this program, we have made a DataFrame from a 2D dictionary having values as dictionary object and then printed this DataFrame on the output screen At the end of the program, we have implemented axes attribute as a print(data_frame.axes) to print the column labels as well as row labels of this DataFrame.
+---------------
+ 4. dtypes
+ ----------------
+The purpose of this attribute is to display the data type for each column of a particular dataframe.
+
+Syntax: dataframe_name.dtypes
+
+ 
+# Python program to implement
+# dtypes attribute in a dataframe object
+import pandas as pd
+ 
+# Creating a 2D dictionary having values as
+# dictionary object
+dict = {"Sales": {'Name': 'Rossum',  'Age': 67, 'Gender': 'Male'},
+        "Marketing": {'Name': 'Rosy',  'Age': 65, 'Gender': 'Female'}}
+ 
+# Creating a data frame object
+data_frame = pd.DataFrame(dict)
+ 
+# printing this data frame on output screen
+print(data_frame)
+ 
+# Implementing dtypes attribute for this
+# data frame
+print(data_frame.dtypes)
+ OUTPUT
+ ---------------------
+ =====================================
+         Sales Marketing
+Name    Rossum      Rosy
+Age         67        65
+Gender    Male    Female
+=====================================
+Sales        object
+Marketing    object
+dtype: object
+=====================================
+
+# Now we will create another dataframe of same
+# data type in a particular column
+print("..Another data frame..")
+ 
+# Creating a 2D dictionary
+dict2 = {"Student": ["Arvind", "Aryan", "Travis", "Rossum"],
+         "Marks": [85, 92, 78, 83],
+         "Sports": ["Cricket", "Volleyball",
+                    "Hockey", "Badminton"]}
+ 
+# Creating another data frame object
+data_frame = pd.DataFrame(dict2)
+ 
+# printing this data frame on output screen
+print(data_frame)
+ 
+# Implementing dtypes attribute for this
+# data frame
+print(data_frame.dtypes)
+Output:
+..Another data frame..
+=====================================
+  Student  Marks      Sports
+0  Arvind     85     Cricket
+1   Aryan     92  Volleyball
+2  Travis     78      Hockey
+3  Rossum     83   Badminton
+=====================================
+Student    object
+Marks       int64
+Sports     object
+dtype: object
+=====================================
+In this program, we have made two DataFrames from a 2D dictionary having values as dictionary object and then printed these DataFrames on the output screen. At the end of each DataFrame, we have implemented “dtypes” attribute as print(data_frame.dtypes) to print the data types of each column for both the DataFrame.
+----------------------------
+5.size
+----------------------------
+=>This attribute is used to display the total number of elements or items present in a data frame.
+
+Syntax: dataframe_name.size
+
+ 
+# Python program to implement
+# size attribute in a dataframe object
+import pandas as pd
+ 
+# Creating a 2D dictionary having values as
+# dictionary object
+dict = {"Sales": {'Name': 'Rossum',  'Age': 65, 'Gender': 'Male'},
+        "Marketing": {'Name': 'Rossy',   'Age': 63, 'Gender': 'Female'}}
+ 
+# Creating a data frame object
+data_frame = pd.DataFrame(dict)
+ 
+# printing this data frame on output screen
+print(data_frame)
+ 
+# Implementing size attribute for this data frame
+print("The total number of elements are:")
+print(data_frame.size)
+Output:
+=====================================
+         Sales Marketing
+Name    Rossum     Rossy
+Age         65        63
+Gender    Male    Female
+=====================================
+The total number of elements are: 6
+=====================================
+
+In this program, we have made a DataFrame from a 2D dictionary having values as dictionary object and then printed this DataFrame on the output screen. At the end of the program, we have implemented size attribute as print(data_frame.size) to print the total number of elements or items of this DataFrame. In this data frame, there is a total of 6 elements which 3 elements from the 1st column and 3 from the 2nd column.
+-------------------
+6.shape
+-------------------
+This attribute is used to display the total number of rows and columns of a particular data frame. For example, if we have 3 rows and 2 columns in a DataFrame then the shape will be (3,2).
+
+Syntax: dataframe_name.shape
+ 
+# Python program to implement
+# shape attribute in a dataframe object
+import pandas as pd
+ 
+# Creating a 2D dictionary having values as
+# dictionary object
+dict = {"Sales": {'Name': 'Rossum', 'Age': 23, 'Gender': 'Male'},
+        "Marketing": {'Name': 'Rossy', 'Age': 22, 'Gender': 'Female'}}
+ 
+# Creating a data frame object
+data_frame = pd.DataFrame(dict)
+ 
+# printing this data frame on output screen
+print(data_frame)
+ 
+# Implementing shape attribute for this data frame
+print("Shape of the DataFrame:")
+print(data_frame.shape)
+Output:
+=====================================
+         Sales Marketing
+Name    Rossum     Rossy
+Age         23        22
+Gender    Male    Female
+=====================================
+Shape of the DataFrame:
+(3, 2)
+=====================================
+
+In this program, we have made a DataFrame from a 2D dictionary having values as dictionary object and then printed this DataFrame on the output screen At the end of the program, we have implemented shape attribute as print(data_frame.shape) to print the number of rows and columns of this DataFrame. In his DataFrame, there are 3 rows and 2 columns so it will print (3,2).
+--------------------
+7. ndim
+--------------------
+ndim means the number of dimensions and this attribute is used to display the number of dimensions of a particular data frame, and a DataFrame is of 2 Dimensional objects.
+
+Syntax: dataframe_name.ndim
+
+ 
+# Python program to implement
+# ndim attribute in a dataframe object
+import pandas as pd
+ 
+# Creating a 2D dictionary having values as
+# dictionary object
+dict = {"Sales": {'Name': 'Shyam', 'Age': 23, 'Gender': 'Male'},
+        "Marketing": {'Name': 'Rossy', 'Age': 22, 'Gender': 'Female'}}
+ 
+# Creating a data frame object
+data_frame = pd.DataFrame(dict)
+ 
+# printing this data frame on output screen
+print(data_frame)
+ # Implementing ndim attribute for this data frame
+print("Number of Dimensions:")
+print(data_frame.ndim)
+Output:
+=====================================
+        Sales Marketing
+Name    Shyam     Rossy
+Age        23        22
+Gender   Male    Female
+=====================================
+Number of Dimensions:2
+=====================================
+In this program, we have made a DataFrame from a 2D dictionary having values as dictionary object and then printed this DataFrame on the output screen At the end of the program, we have implemented ndim attribute as print(data_frame.ndim) to print the number of dimensions of this DataFrame. As we know that a DataFrame is a 2 Dimensional object, so it will print 2.
+--------------
+8. empty
+----------------
+This attribute is used to check whether the data frame is empty or not. This attribute returns true if the data frame is empty and false if the DataFrame is not empty.
+
+Syntax: dataframe_name.empty
+
+ 
+# Python program to implement
+# empty attribute in a dataframe object
+import pandas as pd
+ 
+# Creating a 2D dictionary having values as
+# dictionary object
+dict = {"Sales": {'Name': 'Rossum',
+                  'Age': 67,
+                  'Gender': 'Male'},
+        "Marketing": {'Name': 'Rosy',
+                      'Age': 65, 
+                      'Gender': 'Female'}}
+# Creating a data frame object
+data_frame = pd.DataFrame(dict)
+ 
+# printing this data frame on output screen
+display(data_frame)
+ 
+# Implementing empty attribute for this data frame
+print("Is this DataFrame empty?")
+print(data_frame.empty)
+ 
+# Now we will create another dataframe
+print("..Another data frame..")
+ 
+# Creating a 2D empty dictionary
+dict2 = {}
+ 
+# Creating a data frame object
+data_frame = pd.DataFrame(dict2)
+ 
+# printing this DataFrame on output screen
+print(data_frame)
+ 
+# Implementing empty attribute for this data frame
+print("Is this DataFrame empty?")
+print(data_frame.empty)
+Output:
+..Another data frame..
+=======================================
+Empty DataFrame
+Columns: []
+Index: []
+=======================================
+Is this DataFrame empty?
+True
+=======================================
+
+In this program, we have made two DataFrames from a 2D dictionary having values as dictionary object and then printed these DataFrames on the output screen At the end of each DataFrame, we have implemented an “empty” attribute as print(data_frame.empty) to check whether any of the DataFrame is empty or not. In this program 1st, DataFrame is not empty so it will print “False” and the 2nd DataFrame is empty so it will print “True”.
+---------------------------------------------------------
+9. T (Transpose)
+--------------------------------------------------------
+=>This attribute is used to change the rows into columns and columns into rows.
+
+Syntax: dataframe_name.T
+
+ 
+# Python program to implement T
+# attribute in a dataframe object
+import pandas as pd
+ 
+# Creating a 2D dictionary having values as
+# dictionary object
+dict = {"Sales": {'Name': 'Rossum',
+                  'Age': 67, 
+                  'Gender': 'Male'},
+        "Marketing": {'Name': 'Rosy', 
+                      'Age': 65,
+                      'Gender': 'Female'}}
+ 
+# Creating a data frame object
+data_frame = pd.DataFrame(dict)
+ 
+# printing this data frame on output screen
+print(data_frame)
+ 
+# Implementing T attribute for this data frame
+print("Transpose of this DataFrame is:")
+print(data_frame.T)
+Output:
+------------
+======================================
+Original Data Frame
+======================================
+         Sales Marketing
+Name    Rossum      Rosy
+Age         67        65
+Gender    Male    Female
+======================================
+Transpose of this DataFrame is:
+             Name Age  Gender
+Sales      Rossum  67    Male
+Marketing    Rosy  65  Female
+======================================
+In this program, we have made a DataFrame from a 2D dictionary having values as dictionary object and then printed this DataFrame on the output screen At the end of the program, we have implemented “T” attribute as print(data_frame.T) to print the transpose of this DataFrame. Transpose means all rows of the DataFrame will be changed to columns and vice-versa.
+-------------------------------------
+10. values
+-------------------------------------
+=>This attribute is used to represent the values/data of dataframe in NumPy array form.
+
+Syntax: dataframe_name.values
+
+ 
+# Python program to implement values
+# attribute in a dataframe object
+import pandas as pd
+ 
+# Creating a 2D dictionary having values as
+# dictionary object
+dict = {"Sales": {'Name': 'Rossum', 'Age': 67,  'Gender': 'Male'},
+        "Marketing": {'Name': 'Rosy', 'Age': 65,   'Gender': 'Female'}}
+ 
+# Creating a data frame object
+data_frame = pd.DataFrame(dict)
+ 
+# printing this data frame on output screen
+print(data_frame)
+ 
+# Implementing values attribute for this data frame
+print("NumPy Array form of this DataFrame is:")
+print(data_frame.values)
+Output:
+===========================================
+         Sales Marketing
+Name    Rossum      Rosy
+Age         67        65
+Gender    Male    Female
+===========================================
+NumPy Array form of this DataFrame is:
+[['Rossum' 'Rosy']
+ [67 65]
+ ['Male' 'Female']]
+===========================================
+
+In this program, we have made a DataFrame from a 2D dictionary having values as dictionary object and then printed this DataFrame on the output screen At the end of the program, we have implemented the “values” attribute as print(data_frame.values) to print all the data of this DataFrame in the form of NumPy array.
+===========================================x=========================================

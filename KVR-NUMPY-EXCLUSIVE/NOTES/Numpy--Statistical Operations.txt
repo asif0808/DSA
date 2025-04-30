@@ -1,0 +1,198 @@
+	===========================================
+			Numpy--Statistical Operations 
+	===========================================
+=>On the object of ndarray, we can the following Statistical Operations .
+		a) amax()
+		b) amin()
+		c) mean()
+		d) median()
+		e) var()
+		f)  std()
+=>These operation we can perform on the entire matrix  and we can also peform on columnwise (axis=0) and Rowwise (axis=1)
+a) amax():
+-------------------
+=>This functions obtains maximum element of the entire matrix.
+=>Syntax1:-      varname=numpy.amax(ndarrayobject)
+
+=>Syntax2:-      varname=numpy.amax(ndarrayobject,axis=0)--->obtains max     elements on the basis of columns.
+
+=>Syntax3:-      varname=numpy.amax(ndarrayobject,axis=1)--->obtains max   elements on the basis of Rows.
+-------------------
+Examples:
+-------------------
+>>> l1=[[1,2,3],[4,2,1],[3,4,2]]
+>>> A=np.array(l1)
+>>> print(A)
+		[[1 2 3]
+		 [4 2 1]
+		 [3 4 2]]
+>>> max=np.amax(A)
+>>> cmax=np.amax(A,axis=0)
+>>> rmax=np.amax(A,axis=1)
+>>> print("Max element=",max)-----------Max eleemnt= 4
+>>> print("Column Max eleemnts=",cmax)---Columns Max elements= [4 4 3]
+>>> print("Row Max eleemnts=",rmax)---Row Max eleemnts= [3 4 4]
+-----------------------------------------------------------------------------------------------------
+b) amin():
+-------------------
+=>This functions obtains minmum element of the entire matrix.
+=>Syntax1:-      varname=numpy.amin(ndarrayobject)
+
+=>Syntax2:-      varname=numpy.amin(ndarrayobject,axis=0)--->obtains min	elements on the basis of columns.
+
+=>Syntax3:-      varname=numpy.amin(ndarrayobject,axis=1)--->obtains min	elements on the basis of Rows.
+Examples:
+-------------------
+>>> l1=[[1,2,3],[4,2,1],[3,4,2]]
+>>> A=np.array(l1)
+>>> print(A)
+		[[1 2 3]
+		 [4 2 1]
+		 [3 4 2]]
+>>> min=np.amin(A)
+>>> cmin=np.amin(A,axis=0)
+>>> rmin=np.amin(A,axis=1)
+>>> print("Min eleemnt=",min)---Min eleemnt= 1
+>>> print("Column Min eleemnts=",cmin)---Column Min eleemnts= [1 2 1]
+>>> print("Row Min eleemnts=",rmin)---Row Min eleemnts= [1 1 2]
+---------------------------------------------------------------------------------------------------
+c) mean():
+-----------------
+=>This is used for cal mean of the total matrix elements.
+=>The formula for mean=(sum of all elements of matrix) / total number of elements.
+Syntax1:-      varname=numpy.mean(ndarrayobject)
+Syntax2:-      varname=numpy.mean(ndarrayobject,axis=0)--->Columnwise Mean
+Syntax3:-      varname=numpy.mean(ndarrayobject,axis=1)--->Rowwise Mean
+-----------------
+Examples:
+-----------------
+>>> l1=[[1,2,3],[4,2,1],[3,4,2]]
+>>> A=np.array(l1)
+>>> print(A)
+		[[1 2 3]
+		 [4 2 1]
+		 [3 4 2]]
+>>> m=np.mean(A)
+>>> cm=np.mean(A,axis=0)
+>>> rm=np.mean(A,axis=1)
+>>> print("Mean=",m)-------Mean= 2.4444444444444446
+>>> print("Column Mean=",cm)--Column Mean= [2.66666667    2.66666667       2. ]
+>>> print("Row Mean=",rm)---Row Mean= [ 2.          2.33333333        3.  ]
+------------------------------------------------------------------------------------------------------
+d) median()
+---------------------
+=>This is used for calculating / obtaining median of entire matrix elements.
+=>Median is nothing but sorting the given data in ascending order and select middle element.
+=>If the number of sorted elements are odd then center or  middle element becomes median.
+=>If the number of sorted elements are even then select center or middle  of two elements, add them and divided by 2 and that result  becomes median.
+
+
+Syntax1:-      varname=numpy.median(ndarrayobject)
+
+Syntax2:-      varname=numpy.median(ndarrayobject,axis=0)
+
+Syntax3:-      varname=numpy.median(ndarrayobject,axis=1)
+
+Examples:
+--------------------
+>>> l1=[[1,2,3],[4,2,1],[3,4,2]]
+>>> A=np.array(l1)
+>>> print(A)
+		[[1 2 3]
+		 [4 2 1]
+		 [3 4 2]]
+>>> md=np.median(A)
+>>> cmd=np.median(A,axis=0)
+>>> rmd=np.median(A,axis=1)
+>>> print("Median=",md)----Median= 2.0
+>>> print("Column Median=",cmd)---Column Median= [3.  2.  2.]
+>>> print("Row Median=",rmd)------Row Median= [2.   2.  3.]
+>>> l1=[[2,3],[4,1]]
+>>> A=np.array(l1)
+>>> print(A)
+		[[2 3]
+		 [4 1]]
+>>> md=np.median(A)
+>>> cmd=np.median(A,axis=0)
+>>> rmd=np.median(A,axis=1)
+>>> print("Median=",md)---Median= 2.5
+>>> print("Column Median=",cmd)---Column Median= [3. 2.]
+>>> print("Row Median=",rmd)---Row Median= [2.5 2.5]
+-----------------------------------------------------------------------------------------
+e) var():
+-------------
+Variance= sqr(mean-xi) / total number of elements
+here 'xi' represents each element of matrix.
+------------------
+Syntax1:-      varname=numpy.var(ndarrayobject)
+
+Syntax2:-      varname=numpy.var(ndarrayobject,axis=0)
+
+Syntax3:-      varname=numpy.var(ndarrayobject,axis=1)
+--------------------
+Examples:
+--------------------
+>>> l1=[[1,2,3],[4,2,1],[3,4,2]]
+>>> A=np.array(l1)
+>>> print(A)
+	[[1 2 3]
+	 [4 2 1]
+	 [3 4 2]]
+>>> vr=np.var(A)
+>>> cvr=np.var(A,axis=0)
+>>> rvr=np.var(A,axis=1)
+>>> print("Variance=",vr)----Variance= 1.1358024691358024
+>>> print("Column Variance=",cvr)---Column Variance= [1.55555556 0.88888889													0.66666667]
+>>> print("Row Variance=",rvr)---Row Variance=[0.66666667 1.55555556 0.66666667]
+--------------------------------------------------------------
+f) std()
+------------------
+standard deviation=sqrt(var)
+
+Syntax1:-      varname=numpy.std(ndarrayobject)
+
+Syntax2:-      varname=numpy.std(ndarrayobject,axis=0)
+
+Syntax3:-      varname=numpy.std(ndarrayobject,axis=1)
+-------------------------------
+Examples:
+-------------------------------
+>>> l1=[[1,2,3],[4,2,1],[3,4,2]]
+>>> A=np.array(l1)
+>>> print(A)
+	[[1 2 3]
+	 [4 2 1]
+	 [3 4 2]]
+>>> vr=np.var(A)
+>>> cvr=np.var(A,axis=0)
+>>> rvr=np.var(A,axis=1)
+>>> print("Variance=",vr)---Variance= 1.1358024691358024
+>>> print("Column Variance=",cvr)---Column Variance= [1.55555556 0.88888889																0.66666667]
+>>> print("Row Variance=",rvr)---Row Variance= [0.66666667 1.55555556 0.66666667]
+--------------------------------------------------------------------------------------------------
+>>> sd=np.std(A)
+>>> csd=np.std(A,axis=0)
+>>> rsd=np.std(A,axis=1)
+>>> print("std=",sd)---std= 1.0657403385139377
+>>> print(" column std=",csd)--- column std= [1.24721913 0.94280904 0.81649658]
+>>> print("Row std=",rsd)--Row std= [0.81649658 1.24721913 0.81649658]
+==========================X=====================================
+Note:  numpy module does not contain mode().
+	mode() present in statistics module of Python
+
+mode()  gives Highest Frequent Occuring Element in given object
+Examples:
+----------------
+>>> import statistics as s
+>>> l1=[10,20,30,10,20,40,10]
+>>> s.mode(l1)-------------10
+>>> l1=[10,20,30,10,20,40,10,20]
+>>> s.mode(l1)-------------10
+>>> l1=[20,10,30,10,20,40,10,20]
+>>> s.mode(l1)------------------20
+>>> s.multimode(l1)--------------[20, 10]
+--------------------------------------------------------------
+>>> a=np.array(l1)
+>>> s.mode(a)----------------20
+>>> s.multimode(a)-----------[20, 10]
+=======================================================================================

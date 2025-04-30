@@ -1,0 +1,21 @@
+		======================================
+					Pandas
+		======================================
+Introduction to Pandas:
+--------------------------------------
+=>Pandas is an open source Python Library / Module providing high performance and data manipulation and    Analysis Tool.
+=>The word PANDAs derived from PANel DAta
+=>The pandas concept developed by WES MCKinney in the year 2008.
+=>The Traditional Python Programming does not contain any Module for Data Analysis and Now Python Programming uses Pandas as an anaysis tool.
+=>Python Pandas can be used in wide range of fields like Financial Sectors, Statisticcal Report , retail maketing sectors..etc
+=>pandas module developed in C and Python Languages.
+-----------------------------------------------
+Instalation of Pandas:
+-----------------------------------------------
+=>The standard python software / Distribution(CPYTHON) does not contain any module for data analysis and now we are using third party module called PANDAS and whose module name is pandas
+=>Programatically to use pandas as part of our python program, we must install pandas module by using pip tool.
+
+Syntax:-     pip install   module name
+
+Example:-    pip  install   pandas
+============================================================================

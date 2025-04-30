@@ -1,0 +1,12 @@
+===============================================================
+			Matplotlib - Introduction
+===============================================================
+=>Matplotlib is a powerful and widely-used plotting library in Python which enables us to create a variety of static, interactive and publication-quality plots and visualizations.
+=>It's extensively used for data visualization tasks and offers a wide range of functionalities to create plots like line plots, scatter plots, bar charts, histograms, 3D plots and much more. Matplotlib library provides flexibility and customization options to tailor our plots according to specific needs.
+
+=>It is a cross-platform library for making 2D plots from data in arrays. Matplotlib is written in Python and makes use of NumPy, the numerical mathematics extension of Python. 
+
+=>Matplotlib has a procedural interface named the Pylab which is designed to resemble MATLAB a proprietary programming language developed by MathWorks. Matplotlib along with NumPy can be considered as the open source equivalent of MATLAB.
+
+=>Matplotlib was originally written by John D. Hunter in 2003. The most common way to use Matplotlib is through its pyplot module.
+==================================================================================

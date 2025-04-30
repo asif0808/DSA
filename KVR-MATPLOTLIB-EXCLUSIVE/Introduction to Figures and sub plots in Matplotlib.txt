@@ -1,0 +1,128 @@
+			=====================================================
+				Introduction to Figures and sub plots in Matplotlib
+			=====================================================
+=>The figure is the top-level container of all the axes and properties of a plot, or we can say that it is a canvas that holds the drawings (graphs or plots) on it. 
+=>To create a Figure with our width and height in terms of inches we use figure()
+=>We can create a new figure by using the function matplotlib.pyplot.figure(). 
+-------------------------
+Syntax
+--------------------------
+matplotlib.pyplot.figure( figsize=None,  facecolor=None, edgecolor=None)
+-------------------------------------------
+Example: Changing the figure size
+-------------------------------------------------
+import matplotlib.pyplot as plt
+# Changing the size of the figure
+plt.figure(figsize=(10,6))
+
+x=[1,2,3,4,5,6]
+y=[2,1,5,4,7,5]
+
+plt.title('Changing the figure size')
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.plot(x,y)
+plt.show()
+---------------------------------------------------------------------
+How to Add Subplots to a Figure?
+---------------------------------------------------------------------
+subplot() function visualizes multiple plots in one figure.
+It takes three arguments that describe the layout of the figure. 
+The first and second arguments are rows and columns used to format the figure. 
+The third argument represents the index of the current plot.
+--------------------------------------------------------------------------------------
+Examples
+----------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+
+# function to create a figure
+fig = plt.figure(figsize=(10,6))
+
+# adding subplot to the created figure
+fig1= fig.add_subplot(111)
+
+x = [1,2,3,6,7,8]
+y = [3,4,6,1,3,0]  
+  
+plt.xlabel('x- axis')
+plt.ylabel('y-axis')
+plt.title('Adding plot on a figure')
+
+# plotting points on the subplot
+fig1.plot(x, y)
+
+plt.grid()
+
+plt.show()
+----------------------------------------------------------------------------------------
+Examples:
+------------------------------------------------------------------------------------------
+plt.subplot(1,2,1)
+#means 1 row and two columns, and according to the index, it is the first plot
+plt.subplot(1,2,2)
+#means 1 row and two columns, and according to the index, it is the second plot
+
+So that the two plots will be displayed side by side with each other.
+--------------------------------------------------
+Example: Subplot to a figure
+import matplotlib.pyplot as plt
+fig = plt.figure()
+
+# subplot1
+fig1= fig.add_subplot(1,2,1)
+list1 =[1,2,5,7]
+fig1.plot(list1)
+
+# subplot2
+fig2= fig.add_subplot(1,2,2)
+list2=[1,2,5,0]
+fig2.plot(list2)
+
+# function to add a common title to a figure 
+fig.subtitle('figure with multiple subplots')
+plt.show()
+----------------------------------------------------------------------------------------------
+Example: Multiple plots on the same figure
+
+import matplotlib.pyplot as plt
+
+fig = plt.figure(figsize=(10,6))
+
+#subplot1
+fig1= fig.add_subplot(2,2,1)
+fig1.plot([1,2,5,7])
+
+#subplot2
+fig2= fig.add_subplot(2,2,2)
+fig2.plot([1,2,5,0])
+
+#subplot3
+fig3= fig.add_subplot(2,2,3)
+fig3.plot([3,2,7,0])
+
+#subplot4 
+fig4= fig.add_subplot(2,2,4)
+fig4.plot([0,8,8,0])
+
+fig.suptitle('Multiple subplots')
+
+plt.show()
+==========================================================
+Examples
+-----------------------------------------
+import matplotlib.pyplot as plt
+import numpy as np
+fig = plt.figure(figsize=(10,8),facecolor='lightblue')
+x = np.arange(-np.pi,np.pi,0.01)
+
+fig1 = fig.add_subplot(2,1,1)
+fig1.plot(x,np.sin(x))
+plt.title('Sine curve')
+
+fig2 = fig.add_subplot(2,1,2)
+fig2.plot(x,np.cos(x))
+plt.title('Cosine curve')
+
+fig.suptitle('Subplots in a figure',fontsize=15)
+plt.show()
+===========================================================================================

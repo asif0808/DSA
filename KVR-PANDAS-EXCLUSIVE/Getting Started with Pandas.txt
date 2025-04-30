@@ -1,0 +1,16 @@
+=======================================================================
+		Getting Started with Pandas
+=======================================================================
+Installing Pandas
+------------------------
+=>The first step of working in pandas is to ensure whether it is installed in the system or not.
+=>If not then we need to install it in our system using the pip command. 
+=>Type the cmd command in the search box and locate the folder using the cd command where python-pip file has been installed. After locating it, type the command:
+Syntax:		pip install pandas
+--------------------------------
+Importing Pandas
+--------------------------------
+After the pandas have been installed into the system, you need to import the library. This module is generally imported as follows:
+	import pandas as pd
+=>Here, pd is referred to as an alias to the Pandas. However, it is not necessary to import the library using the alias, it just helps in writing less amount code every time a method or property is called. 
+=======================================x=======================================================

@@ -1,0 +1,44 @@
+======================================================================================
+					Numpy : flatten() and ravel()
+======================================================================================
+=>In NumPy, both the flatten() and ravel() functions are used to convert multidimensional arrays into one-dimensional arrays. However, there are a few differences between these two functions:
+
+=>Return Type: The flatten() function returns a copy of the array, while the ravel() function returns a view of the original array whenever possible. A view is a reference to the original data, whereas a copy creates a new array with its own data.
+=>Performance: Since ravel() returns a view whenever possible, it is generally faster and more memory-efficient compared to flatten(), which always creates a new array. However, if a contiguous array is required, flatten() is a safer choice.
+=>Modifying Original Array: If modifications are made to the flattened or raveled array, the behavior differs. Changes to the flattened array do not affect the original array, as it is a copy. However, changes to the raveled array may alter the original array, as it is a view referring to the same data.
+====================================================================
+Syntax:     ndarrayobj2=ndarrayobj1.flatten()
+
+
+Here's an example to illustrate these differences:
+---------------------------------------
+import numpy as np
+# Creating a 2D array
+arr = np.array([[1, 2, 3],
+                [4, 5, 6]])
+
+print("Original Array")
+print(arr)
+# Using flatten()
+flattened = arr.flatten()  # default style of -C Style (Row-Major Order)
+flattened[0] = 10  # Modifying the flattened array
+print("Flattened Array")
+print(flattened)
+# Using ravel()
+raveled = arr.ravel()
+raveled[0] = 20  # Modifying the raveled array
+print("Raveled Array")
+print(raveled)
+print("Original Array")
+print(arr)
+======================================================================
+Original Array
+[[1 2 3]
+ [4 5 6]]
+Flattened Array
+[10  2  3  4  5  6]
+Raveled Array
+[20  2  3  4  5  6]
+Original Array
+[[20  2  3]
+ [ 4  5  6]]

@@ -1,0 +1,20 @@
+========================================================================
+		Removing Column Name from Data Frame
+=======================================================================
+1) dataframe.drop(columns="col name")
+2) dataframe.drop(columns=["col name1","colname2"....])
+3) dataframe.drop(columns="col name",inplace=True)
+4) dataframe.drop(columns=["col name1","colname2"....],inplace=True)
+5) dataframe.drop(columns=DataFrameObj.columns[Col Number])
+6) dataframe.drop(columns=DataFrameObj.columns[[Col Number1,Col Number2....]])
+Example:  data = data.drop(columns=data.columns[3])
+========================================================================
+		Removing Row  from Data Frame
+=======================================================================
+1) df.drop(labels=index Value, axis=0)
+2) df.drop(labels=[index Value1,Index Value2...] , axis=0)
+Examples:  df.drop(labels=0, axis=0)  # Here  axis=0 refers to Rows 
+Examples:  df.drop(labels=4, axis=0)  # Here  axis=0 refers to Rows 
+# Delete some chosen rows by row numbers - 2nd, 10th, 30th:
+	df.drop(df.index[[1, 9, 29]])
+=======================================================================

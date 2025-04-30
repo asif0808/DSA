@@ -1,0 +1,29 @@
+=================================================================================
+		Accessing the Data from DataFrame by using loc[] and iloc[]
+=================================================================================
+Understabding loc[] ----- here start and stop index (Row Indices) Included and 
+                                         Col Names can be used to get the data from data frame
+					 (but not column Indices used )
+--------------------------------------------------------------------------------------
+1) DataFrameobj.loc[row_number]
+2) DataFrameobj.loc[row_number,[Col Name,.........] ]
+3) DataFrameobj.loc[start:stop:step]
+4) DataFrameobj.loc[start:stop:step,["Col Name"] ]
+5) DataFrameobj.loc[start:stop:step,["Col Name1", Col Name-2......."] ]
+6) DataFrameobj.loc[start:stop:step,"Col Name1" : Col Name-n"] 
+7) DataFrameobj.loc[start:stop:step,"Col Name1" : Col Name-n":step] 
+------------------------------------------------------------------------------------------------------------------------
+Understabding iloc[] ----- here start index included and stop index (Row Indices) excluded and 
+                                         Col Numbers( Column Indices)  must be used to get the data from data frame
+					 (but not column names used)
+----------------------------------------------------------------------------------------------------------------------
+1) DataFrameobj.iloc[row_number]
+2) DataFrameobj.iloc[row_number,Col Number.........] 
+3) DataFrameobj.iloc[row_number,[Col Number1,Col Number2............] ]
+3) DataFrameobj.iloc[row start:row stop, Col Start: Col stop]
+4) DataFrameobj.iloc[row start:row stop:step, Col Start: Col stop:step]
+5) DataFrameobj.iloc[row start:row stop,Col Number ]
+6) DataFrameobj.iloc[ [row number1, row number-2.....] ]
+7) DataFrameobj.iloc[ row start: row stop , [Col Number1,Col Number2............] ]
+8) DataFrameobj.iloc[ : , [Col Number1,Col Number2............] ]
+===================================================================

@@ -1,0 +1,55 @@
+		=================================================
+					 Bar Graph
+		=================================================
+=>The pictorial representation of grouped data, in the form of vertical or horizontal rectangular bars, where the lengths of the bars are equivalent to the measure of data, are known as bar graphs or bar charts.
+=>The bars drawn are of uniform width, and the variable quantity is represented on one of the axes. Also, the measure of the variable is depicted on the other axes. The heights or the lengths of the bars denote the value of the variable, and these graphs are also used to compare certain quantities. 
+=>The frequency distribution tables can be easily represented using bar charts which simplify the calculations and 
+    understanding of data.
+------------------------------------------
+Types of Bar Graphs
+-----------------------------------------
+The types of bar charts are as follows:
+		1) Vertical bar chart
+		2) Horizontal bar chart
+		
+------------------------------
+Vertical Bar Graphs:
+-------------------------------
+=>When the grouped data are represented vertically in a graph or chart with the help of bars, where the bars denote the measure of data, such graphs are called vertical bar graphs. 
+=>The data is represented along the y-axis of the graph, and the height of the bars shows the values.
+--------------------------------
+Horizontal Bar Graphs
+---------------------------------
+=>When the grouped data are represented horizontally in a chart with the help of bars, then such graphs are called horizontal bar graphs, where the bars show the measure of data. The data is depicted here along the x-axis of the graph, and the length of the bars denote the values.
+-----------------------------------
+******************************************************************************************************************************************************
+Implementation of bar graph in matplotlib
+******************************************************************************************************************************************************
+plt.bar(x,y,width=numerical value,color="color name")-------for Vertical Graph
+
+plt.barh(x,y,height=numerical value,color="color name")----for Horizontal Graph
+=====================================
+Problems
+====================================
+Example 1:
+-------------------
+=>In a firm of 400 employees, the percentage of monthly salary saved by each employee is given in the following table. Represent it through a bar graph.
+--------------------------------------------------------------------------------------------------------------------------
+		Savings (in percentage)	Number of Employees(Frequency)
+--------------------------------------------------------------------------------------------------------------------------
+			20					105
+			30					199
+			40					29
+			50					73
+--------------------------------------------------------------------------------------------------------------------------
+Example 2:
+-------------------
+=> Draw a bar chart for year and number of students placed	(Vertical bar and Horizontal )					
+
+		Years			Number of students placed
+		---------			-------------------------------------
+		2020				120
+		2021				200
+		2022				175
+		2023				100
+==========================================================================

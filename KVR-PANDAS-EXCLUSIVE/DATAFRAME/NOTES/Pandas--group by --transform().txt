@@ -1,0 +1,58 @@
+		================================================
+					group by --transform()
+		================================================
+import pandas as pd
+
+df = pd.DataFrame( {'Animal': ['Falcon', 'Falcon', 'Parrot', 'Parrot'], 'Max Speed': [380., 370., 24., 26.]})
+df.groupby(['Animal']).mean()
+
+# Output:
+#         Max Speed
+# Animal           
+# Falcon      375.0
+# Parrot       25.0
+------------------------------------------------
+In this example, we created a DataFrame with two columns: ‘Animal’ and ‘Max Speed’. We then used the groupby function to group the data by the ‘Animal’ column and calculate the mean of the ‘Max Speed’ for each group. The result is a new DataFrame showing the average max speed for Falcons and Parrots.
+
+But what if you want to group by more than one column? 
+That’s where multiple column grouping comes in.
+import pandas as pd
+
+df = pd.DataFrame({'Animal': ['Falcon', 'Falcon', 'Parrot', 'Parrot'], 'Max Speed': [380., 370., 24., 26.], 
+				'Type': ['Bird', 'Bird', 'Bird', 'Bird']})
+df.groupby(['Animal', 'Type']).mean()
+
+# Output:
+#               Max Speed
+# Animal Type           
+# Falcon Bird      375.0
+# Parrot Bird       25.0
+----------------------------------------------------------------
+import pandas as pd
+
+df = pd.DataFrame({'Animal': ['Falcon', 'Falcon', 'Parrot', 'Parrot'], 'Max Speed': [380., 370., 24., 26.]})
+df.groupby(['Animal']).agg(['mean', 'max', 'min'])
+
+# Output:
+#         Max Speed            
+#             mean    max   min
+# Animal                        
+# Falcon     375.0  380.0 370.0
+# Parrot      25.0   26.0  24.0
+In this example, we used the agg function to apply multiple aggregate functions (mean, max, min) to the ‘Max Speed’ of each animal group. The result is a DataFrame that shows the mean, max, and min max speed for each animal.
+----------------------------------------------
+Filtering Groups
+----------------------------------------------
+The filter function allows you to filter out groups that don’t meet certain criteria. Here’s an example:
+
+import pandas as pd
+
+df = pd.DataFrame({'Animal': ['Falcon', 'Falcon', 'Parrot', 'Parrot'], 'Max Speed': [380., 370., 24., 26.]})
+df.groupby(['Animal']).filter(lambda x: x['Max Speed'].mean() > 100)
+
+# Output:
+#   Animal  Max Speed
+# 0 Falcon      380.0
+# 1 Falcon      370.0
+Python
+In this example, we used the filter function to filter out animal groups that have an average max speed of more than 100. The result is a DataFrame that only includes the ‘Falcon’ group, since its average max speed is greater than 100.

@@ -1,0 +1,65 @@
+		=======================================================
+			Implementation of Histograms
+		=======================================================
+=>A histogram is a graph showing frequency distributions.
+=>It is a graph showing the number of observations within each given interval.
+
+=>In other words, a histogram is a diagram involving rectangles whose area is proportional to the frequency of a variable and  width is equal to the class interval.
+   =>Syntax:  plt.hist(x,y,histtype,rwidth,facecolor)
+==================================
+Problem
+===================================
+Question: The following table gives the lifetime of 400 neon lamps. Draw the histogram for the below data.
+		Lifetime (in hours)	  Number of lamps
+		300 – 400			14
+		400 – 500			56
+		500 – 600			60
+		600 – 700			86
+		700 – 800			74
+		800 – 900			62
+		900 – 1000			48
+=========================================================================================
+
+		Age of People			Number of People
+		----------------------------------------------------------------
+			0-10				5
+			10-20			4
+			20-30			3
+			30-40			4
+			40-50			6
+			50-60			2
+==========================================================================================
+program for    
+		marks=[90,50,40,60,55,44,30,10,14,84]
+		grades=[0,35,70,100]
+		plt.hist(marks,grades)
+		plt.title("student grade")
+		plt.xticks([0,35,70,100])
+		plt.xlabels("percentage")
+		plt.ylabel("number of students")
+		plt.show()
+=======================================================================================
+types of histograms
+			hist type----bar  with  rwidth mandatory to specify
+					   step
+					   stepfilled
+--------------------------------------------
+plt.hist(marks,grades,histtype=...,  facecolor="color")
+==========================================x===========================================================
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+Example: 
+-----------------------------------------------------------------------------------------------------------------------------------------
+You can read from the histogram that there are approximately:
+
+2 people from 140 to 145cm
+5 people from 145 to 150cm
+15 people from 151 to 156cm
+31 people from 157 to 162cm
+46 people from 163 to 168cm
+53 people from 168 to 173cm
+45 people from 173 to 178cm
+28 people from 179 to 184cm
+21 people from 185 to 190cm
+4 people from 190 to 195cm
+====================================================================================================

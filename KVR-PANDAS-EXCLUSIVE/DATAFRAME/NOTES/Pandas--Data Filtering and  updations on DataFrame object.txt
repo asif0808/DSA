@@ -1,0 +1,8 @@
+===================================================================
+		Data Filtering and  updations on DataFrame object
+===================================================================
+1) dataframeobj.loc[ (simple condition), ["Col Name"] ]=Expression
+2) dataframeobj.loc[ (compund condition), ["Col Name"] ]=Expression
+	
+Ex: df.loc[ (df["percent"]>=60)  & (df["percent"]<=80),["grade"] ]="First"  # cond updation.
+========================================================================

@@ -1,0 +1,107 @@
+		============================================================
+			Pandas----Merging DataFrames
+		===========================================================
+Concatenating DataFrames
+We can concatenate one or more DataFrames along the Rows & Columns using the concat() function.
+
+Concatenate DataFrames along the Rows
+
+Let’s first create three different DataFrames with similar column names but different index labels i.e.
+
+import pandas as pd
+# List of Tuples
+data1= [('Jack', 34, 'Sydney', 5) ,
+        ('Riti', 31, 'Delhi' , 7) ,
+        ('Aadi', 46, 'New York', 11)]
+# List of Tuples
+data2= [('Mohit', 34, 'Tokyo', 11) ,
+        ('Veena', 31, 'London' , 10) ,
+        ('Shaun', 36, 'Las Vegas', 12)]
+# List of Tuples
+data3= [('Mark', 47, 'Mumbai',   13) ,
+        ('Jose', 43, 'Yokohama', 14) ,
+        ('Ramu', 49, 'Paris',    15)]
+# Create a DataFrame object from list of tuples
+firstDf = pd.DataFrame( data1,
+                        columns=['Name', 'Age', 'City', 'Experience'],
+                        index = ['a', 'b', 'c'])
+print('First DataFrame:')
+# Display the First DataFrame
+print(firstDf)
+# Create a DataFrame object from list of tuples
+secondDF = pd.DataFrame(data2,
+                        columns=['Name', 'Age', 'City', 'Experience'],
+                        index = ['d', 'e', 'f'])
+print('Second DataFrame:')
+# Display the second DataFrame
+print(secondDF)
+# Create a DataFrame object from list of tuples
+thirdDF = pd.DataFrame( data3,
+                        columns=['Name', 'Age', 'City', 'Experience'],
+                        index = ['g', 'h', 'i'])
+print('Third DataFrame:')
+# Display the third DataFrame
+print(thirdDF)
+Output:
+
+First DataFrame:
+   Name  Age      City  Experience
+a  Jack   34    Sydney           5
+b  Riti   31     Delhi           7
+c  Aadi   46  New York          11
+Second DataFrame:
+    Name  Age       City  Experience
+d  Mohit   34      Tokyo          11
+e  Veena   31     London          10
+f  Shaun   36  Las Vegas          12
+Third DataFrame:
+   Name  Age      City  Experience
+g  Mark   47    Mumbai          13
+h  Jose   43  Yokohama          14
+i  Ramu   49     Paris          15
+All the three DataFrames have same number of columns.
+
+In Python, the Pandas library provides a function concat() to concatenate two or more DataFrames. along a particular axis. But the dimensions must match be same along the axis of concatenation. For example, all the three DataFrames created above have similar columns, so we can easily concatenate them along the Rows. 
+For example,
+# Concatenate three DataFrames along the Rows
+df = pd.concat([firstDf, secondDF, thirdDF])
+# Display the Concatenated DataFrame
+print(df)
+Output:
+
+    Name  Age       City  Experience
+a   Jack   34     Sydney           5
+b   Riti   31      Delhi           7
+c   Aadi   46   New York          11
+d  Mohit   34      Tokyo          11
+e  Veena   31     London          10
+f  Shaun   36  Las Vegas          12
+g   Mark   47     Mumbai          13
+h   Jose   43   Yokohama          14
+i   Ramu   49      Paris          15
+We passed the list of DataFrames in the concat() function and the default value of axis argument is 0 i.e. axis=0. If axis is 0, it means that DataFrames will be merged along the rows i.e. rows of all the DataFrames will be added on top of each other.
+---------------------------------------------------
+Concatenate DataFrames along the Columns
+----------------------------------------------------
+To concatenate the DataFrames along the columns, we need to pass axis=1 in the conact() function. For example,
+
+# Concatenate three DataFrames along the Columns
+df = pd.concat([firstDf, secondDF, thirdDF], axis=1)
+# Display the Concatenated DataFrame
+print(df)
+Output:
+
+   Name   Age      City  Experience   Name  ...  Experience  Name   Age      City  Experience
+a  Jack  34.0    Sydney         5.0    NaN  ...         NaN   NaN   NaN       NaN         NaN
+b  Riti  31.0     Delhi         7.0    NaN  ...         NaN   NaN   NaN       NaN         NaN
+c  Aadi  46.0  New York        11.0    NaN  ...         NaN   NaN   NaN       NaN         NaN
+d   NaN   NaN       NaN         NaN  Mohit  ...        11.0   NaN   NaN       NaN         NaN
+e   NaN   NaN       NaN         NaN  Veena  ...        10.0   NaN   NaN       NaN         NaN
+f   NaN   NaN       NaN         NaN  Shaun  ...        12.0   NaN   NaN       NaN         NaN
+g   NaN   NaN       NaN         NaN    NaN  ...         NaN  Mark  47.0    Mumbai        13.0
+h   NaN   NaN       NaN         NaN    NaN  ...         NaN  Jose  43.0  Yokohama        14.0
+i   NaN   NaN       NaN         NaN    NaN  ...         NaN  Ramu  49.0     Paris        15.0
+
+[9 rows x 12 columns]
+As we concatenated the DataFrames along the columns and all the DataFrames do not have similar Index labels, therefore for missing values the NaN values got Added.
+==========================================x===================================================

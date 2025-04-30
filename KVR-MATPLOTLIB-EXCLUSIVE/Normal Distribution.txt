@@ -1,0 +1,58 @@
+				===========================
+					Normal Distribution
+				===========================
+=>The Normal Distribution is one of the most important distributions.
+=>It is also called the Gaussian Distribution after the German mathematician Carl Friedrich Gauss.
+Examples  IQ Scores, Heartbeat etc.
+=>Use the random.normal() method to get a Normal Data Distribution.
+--------------------------------------
+It has three parameters:
+---------------------------------------
+loc - (Mean) where the peak of the bell exists.
+scale - (Standard Deviation) how flat the graph distribution should be.
+size - The shape of the returned array.
+-----------------------------------------------
+from numpy import random
+x = random.normal(size=(2, 3))
+print(x)
+-----------------------------
+Example
+Generate a random normal distribution of size 2x3 with mean at 1 and standard deviation of 2:
+from numpy import random
+x = random.normal(loc=1, scale=2, size=(2, 3))
+print(x)
+-------------------------------------
+Visualization of Normal Distribution
+-----------------------------------------------------
+Example
+------------------------
+from numpy import random
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.distplot(random.normal(size=1000), hist=False)
+plt.show()
+----------------------------------------------------------------
+import matplotlib.pyplot as plt
+mu, sigma = 0, 0.1 # mean and standard deviation
+s = np.random.normal(mu, sigma, 1000)
+plt.hist(s, 30)
+plt.show()
+-------------------------------------------------------------------------------
+With scipy
+-----------------------------
+import numpy as np 
+import matplotlib.pyplot as plt 
+from scipy.stats import norm 
+import statistics 
+  
+# Plot between -20 and 20 with .001 steps. 
+x_axis = np.arange(-20, 20, 0.01) 
+  
+# Calculating mean and standard deviation 
+mean = statistics.mean(x_axis) 
+sd = statistics.stdev(x_axis) 
+  
+plt.plot(x_axis, norm.pdf(x_axis, mean, sd)) 
+plt.show() 
+-------------------------------------------------------------------------------------

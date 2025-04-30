@@ -1,0 +1,15 @@
+				===========================================================
+							DataFrame
+				===========================================================
+=>DataFrame is one of the Class and whose Object allows us to store the data in Tablular Format OR 2-Dimensional Format and where we can Perform Data Analysis.
+=>In Otherwords DataFrame is one of 2-Dimensional Labelled Array capable of Storing  Similar Type OR Different type OR Both the types in single Object. 
+=>Even we store Multiple Values of Different type , Internally Those values are treated as object,
+=>DataFrame Object = DataSet + Indices + columns
+=>Data Set Represents The Collection of Values and they may contain same type of Different type (object)
+=>Indices Represents Row Indices, Whose Indices by default starts from 0 to N-1, Here N represents Number of Rows. The deafult Row Indices can be assigned by programer according to Programmer-Choice.
+=>columns Represents Column Indices Whose Indices by default starts from 0 to M-1 here M represnets Columns. The 
+   deafult Column Indices can be assigned by programer according to Programmer-Choice.
+=>An object of DataFrame is MUTABLE bcoz we can do many more Operation at Same Address.
+=>A DataFrame is always Considered as Collection of Series Object(s)
+*******************************************************************************************************************************************************
+

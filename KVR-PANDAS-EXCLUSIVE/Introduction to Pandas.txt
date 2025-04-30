@@ -1,0 +1,36 @@
+		====================================
+			Introduction to Pandas
+		====================================
+=>Data Science and Machine Learning rely on data
+=>Therefore, data is the new oil nowadays. 
+=>We can not directly use the raw data for analysis and creating machine models.
+=>We need to load, process, and make it ready for analysis. Then we also need efficient APIs for analysis and applying machine learning models to it. Python provides a few modules, i.e., NumPy and Pandas, for data processing to make all this scientific and analytics stuff possible. Also, Matplotlib for Data Visualization. These modules help users to manipulate, transform and visualize data efficiently.
+		================================
+			What is Pandas
+		================================
+=>Pandas is an open-source library that is built on top of NumPy library. It is a Python package that offers various data structures and operations for manipulating numerical data and time series. It is mainly popular for importing and analyzing data much easier. Pandas is fast and it has high-performance & productivity for users.
+=>Python provides the Pandas module for high-performance data analysis.
+------------------------------------------
+Why do we need Pandas?
+------------------------------------------
+It is a fast, flexible, and powerful data manipulation library. Pandas is the most crucial module for applying Data Science using Python Programming. It provides several data structures like Series, Index, and DataFrame for data analysis. 
+==================================
+Advantages of Pandas in Real Time
+==================================
+=>Easy import and export of data into a tabular format data structure like DataFrame.
+=>Routines(Functions / Method) for manipulation and complex analyses of data.
+=>Easy handling of missing data (represented as NaN) in floating point as well as non-floating point 
+  data.
+=>Data set cleaning, merging, and joining.
+=>Reshaping of datasets
+=>Columns can be inserted,deleted and updated from DataFrame and higher dimensional objects.
+=>Time-series based data manipulation and analysis APIs
+=>Group-By functionality to perform split-apply-combine operations
+=>Well integrated with other libraries like NumPy and matplotlib
+=>The data produced by Pandas are often used as input for plotting functions of Matplotlib(Data Visulaization), statistical analysis in SciPy, and machine learning algorithms in Scikit-learn.
+============================================================================================
+
+
+
+
+

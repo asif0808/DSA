@@ -1,0 +1,142 @@
+	-------------------------------------------------------
+		Iterate over Rows and Columns of DataFrame
+	--------------------------------------------------------
+First, we will create a DataFrame,
+
+import pandas as pd
+# List of Tuples
+empoyees = [(11, 'jack', 34, 'Sydney', 5) ,
+            (12, 'Riti', 31, 'Delhi' , 7) ,
+            (13, 'Aadi', 16, 'New York', 11) ,
+            (14, 'Mohit', 32,'Delhi' , 15) ,
+            (15, 'Veena', 33, 'Delhi' , 4) ,
+            (16, 'Shaunak', 35, 'Mumbai', 5 ),
+            (17, 'Shaun', 35, 'Colombo', 11)]
+# Create a DataFrame object
+df = pd.DataFrame(  empoyees,
+                    columns=['ID', 'Name', 'Age', 'City', 'Experience'],
+                    index=['a', 'b', 'c', 'd', 'e', 'f', 'h'])
+# Display the DataFrame
+print(df)
+Output:
+
+   ID     Name  Age      City  Experience
+a  11     jack   34    Sydney           5
+b  12     Riti   31     Delhi           7
+c  13     Aadi   16  New York          11
+d  14    Mohit   32     Delhi          15
+e  15    Veena   33     Delhi           4
+f  16  Shaunak   35    Mumbai           5
+h  17    Shaun   35   Colombo          11
+This DataFrame has seven rows and five columns. Now let’s see how to iterate over this DataFrame.
+------------------------------------------------------------------------------------
+Iterate over rows of a DataFrame by index labels
+-------------------------------------------------------------------------------------
+In Pandas, the DataFrame class provides a method iterrows(), it yields an iterator that can be used to loop over all the rows of a DataFrame. For each of the rows, it returns a tuple, which contains the index label and row contents as a Series object. From the Series object, we can use the values attribute to get the row values as a NumPy Array.
+
+Let’s iterate over all the rows of the above-created dataframe using iterrows() i.e.
+# Iterate over rows of DataFrame by Index Labels
+for (index_label, row_series) in df.iterrows():
+    print('Row Index label : ', index_label)
+    print('Row Content as NumPy Array: ', row_series.values)
+---------
+Output:
+---------
+Row Index label :  a
+Row Content as NumPy Array:  [11 'jack' 34 'Sydney' 5]
+Row Index label :  b
+Row Content as NumPy Array:  [12 'Riti' 31 'Delhi' 7]
+Row Index label :  c
+Row Content as NumPy Array:  [13 'Aadi' 16 'New York' 11]
+Row Index label :  d
+Row Content as NumPy Array:  [14 'Mohit' 32 'Delhi' 15]
+Row Index label :  e
+Row Content as NumPy Array:  [15 'Veena' 33 'Delhi' 4]
+Row Index label :  f
+Row Content as NumPy Array:  [16 'Shaunak' 35 'Mumbai' 5]
+Row Index label :  h
+Row Content as NumPy Array:  [17 'Shaun' 35 'Colombo' 11]
+Here, we iterated over all the rows of the DataFrame by row index labels.
+===================================================================================
+Iterate over rows of a DataFrame by index Positions
+===================================================================================
+Get the count of the number of rows in the DataFrame. Then loop through 0 to N, where N is the number of rows in the DataFrame. During iteration, access each row as a Series object by the index position using iloc[]. From the Series object, use the values attribute to get the row values as a NumPy Array.
+
+# Iterate over rows of DataFrame by index positions
+for i in range(0, df.shape[0]):
+    print('Row Index Position : ', i)
+    # Get row contents as NumPy Array from Series
+    rowContent = df.iloc[i].values
+    print('Row Content as NumPy Array: ', rowContent)
+Output:
+
+Row Index Position :  0
+Row Content as NumPy Array:  [11 'jack' 34 'Sydney' 5]
+Row Index Position :  1
+Row Content as NumPy Array:  [12 'Riti' 31 'Delhi' 7]
+Row Index Position :  2
+Row Content as NumPy Array:  [13 'Aadi' 16 'New York' 11]
+Row Index Position :  3
+Row Content as NumPy Array:  [14 'Mohit' 32 'Delhi' 15]
+Row Index Position :  4
+Row Content as NumPy Array:  [15 'Veena' 33 'Delhi' 4]
+Row Index Position :  5
+Row Content as NumPy Array:  [16 'Shaunak' 35 'Mumbai' 5]
+Row Index Position :  6
+Row Content as NumPy Array:  [17 'Shaun' 35 'Colombo' 11]
+Here, we looped through all the rows of the DataFrame by the index positions.
+====================================================================================
+Iterate over columns of DataFrame using Column Names
+===================================================================================
+In Pandas, the Dataframe provides attribute columns, which give a sequence of column names. We can iterate over these column names, and for each column label, we can select the column contents as a Series object using the subscript operator ( [] ). From the Series object, use the values attribute to get the column values as a NumPy Array. For example,
+
+# Iterate over the sequence of column names
+for column in df.columns:
+    # Select column contents by column name using [] operator
+    columnSeriesObj = df[column]
+    print('Colunm Name : ', column)
+    print('Column Contents as NumPy Array: ', columnSeriesObj.values)
+---------
+Output:
+----------
+Colunm Name :  ID
+Column Contents as NumPy Array:  [11 12 13 14 15 16 17]
+Colunm Name :  Name
+Column Contents as NumPy Array:  ['jack' 'Riti' 'Aadi' 'Mohit' 'Veena' 'Shaunak' 'Shaun']
+Colunm Name :  Age
+Column Contents as NumPy Array:  [34 31 16 32 33 35 35]
+Colunm Name :  City
+Column Contents as NumPy Array:  ['Sydney' 'Delhi' 'New York' 'Delhi' 'Delhi' 'Mumbai' 'Colombo']
+Colunm Name :  Experience
+Column Contents as NumPy Array:  [ 5  7 11 15  4  5 11]
+Here, we looped through all the columns of the DataFrame by the column names.
+==================================================================================
+Iterate over columns of DataFrame by column numbers
+==================================================================================
+To iterate over the columns of a DataFrame by column numbers,
+
+Get the count of total columns in the DataFrame.
+Loop over 0 to N, where N stands for the count of the number of columns
+Select each column by index position/number during iteration using iloc[].
+Let’s see how to iterate over all columns of a DataFrame by column numbers,
+
+# Iterate over columns of DataFrame by index positions
+for i in range(0, df.shape[1]):
+    print('Colunm Number/Position: ', i)
+    # Get column contents as NumPy Array
+    columnContent = df.iloc[:, i].values
+    print('Column contents: ', columnContent)
+Output:
+
+Colunm Number/Position:  0
+Column contents:  [11 12 13 14 15 16 17]
+Colunm Number/Position:  1
+Column contents:  ['jack' 'Riti' 'Aadi' 'Mohit' 'Veena' 'Shaunak' 'Shaun']
+Colunm Number/Position:  2
+Column contents:  [34 31 16 32 33 35 35]
+Colunm Number/Position:  3
+Column contents:  ['Sydney' 'Delhi' 'New York' 'Delhi' 'Delhi' 'Mumbai' 'Colombo']
+Colunm Number/Position:  4
+Column contents:  [ 5  7 11 15  4  5 11]
+Here, we looped through all the columns of the DataFrame by the column index numbers.
+=========================================================================================

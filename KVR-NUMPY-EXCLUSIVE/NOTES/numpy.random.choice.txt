@@ -1,0 +1,9 @@
+			========================================================
+					numpy.random.choice()
+			========================================================
+
+Syntax:    varname=numpy.random.choice(object,size)
+
+=>The Choice() will select randomly either One Value (By default size=1) or More Values in the form 1-D,2-D and n-D 
+    depends value of Passing size
+================================================================================================
