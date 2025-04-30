@@ -1,1 +1,1 @@
-test
+Welcome to React Basics – a beginner-friendly repository designed to help you get started with React.js. Whether you're just diving into frontend development or looking for a refresher, this repo covers essential concepts with clear examples and modular code.
