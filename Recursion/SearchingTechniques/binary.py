@@ -1,7 +1,7 @@
 def binSearch(arr,srch):
     first=0
     last=len(arr)-1
-    for _ in range(len(arr)):
+    while first<=last:
         mid=(first+last)//2
         if(srch==arr[mid]):
             return mid
@@ -9,4 +9,5 @@ def binSearch(arr,srch):
             last=mid-1
         else:
             first=mid+1
-print(binSearch([2,3,4,5],5))
+    return 'not found'
+print(binSearch([2,3,4,5],6))
